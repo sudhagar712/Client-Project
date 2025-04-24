@@ -1,0 +1,38 @@
+.banner-wrapper {
+  background-color: #002b5c; 
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.banner-logo {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.bannertext{
+    font-size: 50px;
+    text-align: left;
+}
+
+
+@media (max-width: 768px) {
+  .bannertext {
+    font-size: 30px;
+    text-align: center;
+  
+  }
+
+  .banner-wrapper {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .banner-logo {
+    max-width: 290px;
+    margin-top: 30px;
+  }
+}
+

@@ -1,0 +1,53 @@
+
+.headercontainer {
+  
+   background-color: #012b5c;
+
+
+}
+
+.logoimg {
+  width: 70px;
+  height:70px;
+  border-radius:50%;
+  transition: transform 0.3s ease;
+}
+.logoimg:hover {
+  transform: scale(1.1);
+}
+
+/* Buttons animation */
+.subbtn {
+  background-color: #fbc531;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 8px;
+ 
+}
+
+.subbtn:hover {
+ 
+  background-color: #e1a70a;
+}
+
+/* Subheading animation */
+.subheading {
+  background-color: #012b5c;
+  box-shadow: #012b5c;
+    opacity:0.9;
+
+}
+
+
+.menubarcolor{
+   background-color: #012b5c;
+    box-shadow: #94a9c0;
+    color:white;
+}
+
+.menucolor{
+   color:white;
+}
+
+

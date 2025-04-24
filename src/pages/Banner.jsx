@@ -1,0 +1,78 @@
+import React from "react";
+import logo from "../assets/images/logo.png";
+import { Typewriter } from "react-simple-typewriter";
+import bannerBg from "../assets/images/pattern logo.jpg"; 
+
+const Banner = () => {
+  const bannerStyle = {
+    position: "relative",
+    backgroundColor: "#002b5c",
+    color: "white",
+    minHeight: "100vh",
+    display: "flex",
+    alignItems: "center",
+    backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0.39)), url(${bannerBg})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    zIndex: 1
+  };
+
+  return (
+    <div style={bannerStyle} className="py-5">
+      <div className="container">
+        <div className="row align-items-center">
+          {/* Left Column */}
+          <div className="col-md-6 text-white text-center text-md-start mb-4 mb-md-0">
+            <h1 className="fw-bold" style={{ fontSize: "2.8rem" }}>
+              <Typewriter
+                words={["Legal Assistance Made Simple"]}
+                loop={false}
+                cursor
+                cursorStyle="|"
+                typeSpeed={80}
+                deleteSpeed={50}
+                delaySpeed={1500}
+              />
+            </h1>
+            <p className="lead mt-3">
+              Connecting clients with lawyers through a digital platform. Get
+              expert legal advice and support when you need it most.
+            </p>
+            <div className="mt-4 d-flex flex-sm-row gap-3 justify-content-center justify-content-md-start">
+              <button
+                className="btn fw-bold"
+                style={{
+                  backgroundColor: "#ffc107",
+                  color: "#000",
+                  padding: "0.5rem 1.5rem"
+                }}
+              >
+                Find a Lawyer
+              </button>
+              <button
+                className="btn btn-light fw-bold"
+                style={{ padding: "0.5rem 1.5rem" }}
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="col-md-6 text-center">
+            <img
+              src={logo}
+              alt="LawForLayman Logo"
+              className="img-fluid"
+              data-aos="zoom-in-up"
+              style={{ maxWidth: "60%", height: "auto", borderRadius: "50%" }}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Banner;
