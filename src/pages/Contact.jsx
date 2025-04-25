@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section className="contact-section py-5">
       <div className="container">
-        <h1 className="mb-5 fw-bold text-white fs-1" >
+        <h1 className="mb-5 fw-bold text-white fs-1">
           Contact<span className="text-warning fs-1"> Us</span>
         </h1>
         <p className=" text-light mb-5">
@@ -15,16 +15,18 @@ const Contact = () => {
 
         <div className="row g-4">
           {/* Contact Form */}
-          <div className="col-lg-6">
-            <div className="cardcontact d-flex justify-content-center align-items-center">
-              <h1 className="text-center">Join <br /> LawForLayman <br />Today!</h1>
+          <div className="col-lg-6 animate__animated animate__fadeInUp">
+            <div className="cardcontact d-flex justify-content-center ">
+              <h4 className="fw-bold ">Join LawForLayman Today!</h4>
             </div>
           </div>
 
           {/* Contact Info and Map */}
-          <div className="col-lg-6">
-            <div className="card p-4 shadow bg-white bg-opacity-75">
-              <h5 className="fw-bold mb-4">Send Us a Message</h5>
+          <div className="col-lg-6 animate__animated animate__fadeInUp">
+            <div className="card p-4 shadow bg-white bg-opacity-25">
+              <h5 className="fw-bold mb-4 fs-1 text-black">
+                Send Us a <span className="text-warning">Message</span>{" "}
+              </h5>
               <form>
                 <div className="row">
                   <div className="col-md-6 mb-3">
@@ -63,40 +65,46 @@ const Contact = () => {
                     placeholder="Your Message"
                   ></textarea>
                 </div>
-                <button className="btn btn-warning ">Send Message</button>
+                <button className="btn btn-warning w-100 fw-bold p-4 ">
+                  Send Message
+                </button>
               </form>
             </div>
           </div>
         </div>
 
         <div className="row g-4 mt-3">
-          <div className="col-lg-6">
-            <div className="card p-4 mb-4 shadow bg-white bg-opacity-75">
-              <h5 className="fw-bold mb-3">Contact Information</h5>
-              <p>
+          <div className="col-lg-6 animate__animated animate__fadeInUp">
+            <div className="card p-4 mb-4 shadow text-left  bg-white bg-opacity-25">
+              <h5 className="fw-bold mb-3 text-black fs-1">
+                Contact <span className="text-warning">Information</span>
+              </h5>
+              <p className="text-black ">
                 <strong>📍 Address:</strong> Kakkanji St, Chennai, Tamil Nadu,
                 India
               </p>
-              <p>
+              <p className="text-black ">
                 <strong>📞 Phone:</strong> +91 9083522638
               </p>
-              <p>
+              <p className="text-black ">
                 <strong>📧 Email:</strong> info@lawforlaymen.com
               </p>
-              <p>
+              <p className="text-black  ">
                 <strong>⏰ Business Hours:</strong>
-                <br />
-                Monday - Friday: 9:00 AM - 6:00 PM
-                <br />
-                Saturday: 9:00 AM - 1:00 PM
-                <br />
-                Sunday: Closed
               </p>
+              
+                <span className="text-black  fw-bold  ">Monday - Friday:</span>9:00 AM -
+                6:00 PM
+                
+                <span className=" text-black fw-bold">Saturday: </span> 9:00 AM - 1:00 PM
+              
+                <span className=" fw-bold text-black">Sunday:</span>Closed
+             
             </div>
           </div>
-          <div className="col-lg-6 ">
+          <div className="col-lg-6 animate__animated animate__fadeInUp">
             <div
-              className="card shadow overflow-hidden"
+              className="card shadow overflow-hidden "
               style={{ height: "300px" }}
             >
               <iframe

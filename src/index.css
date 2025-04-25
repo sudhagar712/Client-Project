@@ -9,7 +9,7 @@
 
 body{
   font-family: 'poppins', 'sans-serif';
- background-color: #012b5c;
+
   
 }
 
@@ -160,7 +160,7 @@ color:black;
 
 .cardcontact {
   height: 300px; 
-  background-color: #012b5c; 
+  background-color:#cea249; 
   color:white;
   display: flex;
   justify-content: center;
@@ -172,6 +172,48 @@ color:black;
   
 
 }
+
+
+.card-hover:hover {
+  background-color: #012b5c !important;
+  color: white !important;
+  border: 1px solid white !important;
+  transition: 2s all ease-in-out;
+}
+
+.card-hover:hover .card-title,
+.card-hover:hover .card-text,
+.card-hover:hover .text-primary,
+.card-hover:hover a {
+  color: white !important;
+}
+
+
+
+.feature-card {
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 1rem;
+}
+
+.feature-card:hover {
+  background-color: #012b5c;
+  color: white;
+}
+
+.feature-card:hover i,
+.feature-card:hover .card-text {
+  color: white !important;
+}
+
+/* Icon colors */
+.icon-blue { color: #0d6efd; }
+.icon-green { color: #198754; }
+.icon-orange { color: #fd7e14; }
+.icon-red { color: #dc3545; }
+.icon-purple { color: #6f42c1; }
+.icon-teal { color: #20c997; }
+
 
 
 

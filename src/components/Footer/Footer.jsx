@@ -17,22 +17,22 @@ const Footer = () => {
             <h6 className="fw-bold">Quick Links</h6>
             <ul className="list-unstyled">
               <li>
-                <a href="#home" className="text-light text-decoration-none">
+                <a href="/" className="text-light text-decoration-none">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-light text-decoration-none">
+                <a href="/service" className="text-light text-decoration-none">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-light text-decoration-none">
+                <a href="/about" className="text-light text-decoration-none">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-light text-decoration-none">
+                <a href="/contact" className="text-light text-decoration-none">
                   Contact
                 </a>
               </li>

@@ -17,27 +17,27 @@ const RealProblems = () => {
         <div className="container">
           <div className="row text-center text-md-start align-items-center g-4">
             <div className="col-12 p-5 col-md-4 d-flex gap-3 align-items-start">
-              <FileText size={100} className="text-primary" />
+              <FileText size={50} className="text-primary" />
               <div>
-                <p className="mt-3 fs-5 fw-bold  ">
+                <p className=" fw-bold  ">
                   Countless hours spent on drafting and researching
                 </p>
               </div>
             </div>
 
             <div className="col-12 p-5 col-md-4 d-flex gap-3 align-items-start border-start border-end">
-              <Target size={100} className="text-danger" />
+              <Target size={50} className="text-danger" />
               <div>
-                <p className=" mt-3 fs-5 fw-bold  ">
+                <p className=" fw-bold  ">
                   Less time for strategizing & client interactions
                 </p>
               </div>
             </div>
 
             <div className="col-12 p-5 col-md-4 d-flex gap-3 align-items-start">
-              <Timer size={100} className="text-success" />
+              <Timer size={50} className="text-success" />
               <div>
-                <p className=" mt-3 fs-5 fw-bold  ">
+                <p className=" fw-bold  ">
                   Time-consuming traditional methods leads to stress
                 </p>
               </div>

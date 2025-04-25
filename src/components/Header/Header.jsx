@@ -8,7 +8,7 @@ function Header() {
   const handleCloseOffcanvas = () => {
     const offcanvasElement = document.getElementById("offcanvasNavbar");
     const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
-    bsOffcanvas?.hide(); // safely hide if instance exists
+    bsOffcanvas?.hide(); 
   };
 
   return (

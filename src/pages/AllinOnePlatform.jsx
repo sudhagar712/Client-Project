@@ -8,12 +8,36 @@ import logo from "../assets/images/logo.png";
 
 
 const features = [
-  { icon: "bi-file-earmark-text", title: "Quick access to legal documents" },
-  { icon: "bi-pen", title: "Efficient document creation" },
-  { icon: "bi-gear", title: "Time-saving automation" },
-  { icon: "bi-search", title: "Enhanced legal analysis with precedents" },
-  { icon: "bi-star", title: "Expertise of legal veterans" },
-  { icon: "bi-shield-check", title: "Greater transparency" }
+  {
+    icon: "bi-file-earmark-text",
+    title: "Quick access to legal documents",
+    colorClass: "icon-blue"
+  },
+  {
+    icon: "bi-pen",
+    title: "Efficient document creation",
+    colorClass: "icon-green"
+  },
+  {
+    icon: "bi-gear",
+    title: "Time-saving automation",
+    colorClass: "icon-orange"
+  },
+  {
+    icon: "bi-search",
+    title: "Enhanced legal analysis with precedents",
+    colorClass: "icon-red"
+  },
+  {
+    icon: "bi-star",
+    title: "Expertise of legal veterans",
+    colorClass: "icon-purple"
+  },
+  {
+    icon: "bi-shield-check",
+    title: "Greater transparency",
+    colorClass: "icon-teal"
+  }
 ];
 
 const AllInOnePlatform = () => {
@@ -56,10 +80,10 @@ const AllInOnePlatform = () => {
               data-aos="zoom-in"
               data-aos-delay={index * 100}
             >
-              <Card className="feature-card text-center p-4 h-100 shadow-glow">
+              <Card className="feature-card text-center p-4 h-100 shadow-glow opacity-75 rounded">
                 <Card.Body>
                   <i
-                    className={`bi ${feature.icon} fs-1 mb-3 text-primary`}
+                    className={`bi ${feature.icon} fs-1 mb-3 ${feature.colorClass}`}
                   ></i>
                   <Card.Text className="fw-semibold">{feature.title}</Card.Text>
                 </Card.Body>

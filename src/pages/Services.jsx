@@ -49,7 +49,7 @@ const Services = () => {
               key={index}
             >
               <div
-                className="card h-100 shadow-lg border-0"
+                className="card h-100 shadow-lg border-0 card-hover"
                 style={{ borderRadius: "1rem", backgroundColor: "#ffffffdd" }}
               >
                 <div className="card-body text-start">
