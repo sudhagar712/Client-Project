@@ -1,4 +1,11 @@
 import React from "react";
+import {
+  Person,
+  Envelope,
+  Telephone,
+  PencilSquare,
+  ChatDots
+} from "react-bootstrap-icons";
 
 
 const Contact = () => {
@@ -16,56 +23,87 @@ const Contact = () => {
         <div className="row g-4">
           {/* Contact Form */}
           <div className="col-lg-6 animate__animated animate__fadeInUp">
-            <div className="cardcontact d-flex justify-content-center ">
+            <div className="cardcontact bg-primary opacity-75 d-flex justify-content-center ">
               <h4 className="fw-bold ">Join LawForLayman Today!</h4>
             </div>
           </div>
 
           {/* Contact Info and Map */}
-          <div className="col-lg-6 animate__animated animate__fadeInUp">
-            <div className="card p-4 shadow bg-white bg-opacity-25">
-              <h5 className="fw-bold mb-4 fs-1 text-black">
-                Send Us a <span className="text-warning">Message</span>{" "}
-              </h5>
-              <form>
-                <div className="row">
-                  <div className="col-md-6 mb-3">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Full Name"
-                    />
-                  </div>
-                  <div className="col-md-6 mb-3">
-                    <input
-                      type="email"
-                      className="form-control"
-                      placeholder="Email Address"
-                    />
-                  </div>
-                </div>
-                <div className="mb-3">
+          <div className="col-lg-6 mx-auto">
+            <div
+              className="card p-5 shadow-lg border-0"
+              style={{
+                background: "rgba(13, 110, 253, 0.75)",
+                backdropFilter: "blur(10px)",
+                borderRadius: "1rem"
+              }}
+            >
+              <h3 className="fw-bold mb-4 text-white text-center">
+                Send Us a <span className="text-warning">Message</span>
+              </h3>
+              <form className="w-100">
+                {/* Full Name */}
+                <div className="mb-3 input-group w-100">
+                  <span className="input-group-text bg-white text-primary fs-5 border-end-0">
+                    <Person />
+                  </span>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control border-start-0"
+                    placeholder="Full Name"
+                  />
+                </div>
+
+                {/* Email */}
+                <div className="mb-3 input-group w-100">
+                  <span className="input-group-text bg-white text-primary fs-5 border-end-0">
+                    <Envelope />
+                  </span>
+                  <input
+                    type="email"
+                    className="form-control border-start-0"
+                    placeholder="Email Address"
+                  />
+                </div>
+
+                {/* Phone */}
+                <div className="mb-3 input-group w-100">
+                  <span className="input-group-text bg-white text-primary fs-5 border-end-0">
+                    <Telephone />
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control border-start-0"
                     placeholder="Phone Number"
                   />
                 </div>
-                <div className="mb-3">
+
+                {/* Subject */}
+                <div className="mb-3 input-group w-100">
+                  <span className="input-group-text bg-white text-primary fs-5 border-end-0">
+                    <PencilSquare />
+                  </span>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control border-start-0"
                     placeholder="Subject"
                   />
                 </div>
-                <div className="mb-3">
+
+                {/* Message */}
+                <div className="mb-4 input-group w-100">
+                  <span className="input-group-text bg-white text-primary fs-5 border-end-0">
+                    <ChatDots />
+                  </span>
                   <textarea
-                    className="form-control"
+                    className="form-control border-start-0"
                     rows="4"
                     placeholder="Your Message"
                   ></textarea>
                 </div>
-                <button className="btn btn-warning w-100 fw-bold p-4 ">
+
+                {/* Submit Button */}
+                <button className="btn btn-warning w-100 fw-bold py-3 fs-5 shadow-sm">
                   Send Message
                 </button>
               </form>
@@ -92,19 +130,16 @@ const Contact = () => {
               <p className="text-black  ">
                 <strong>⏰ Business Hours:</strong>
               </p>
-              
-                <span className="text-black  fw-bold  ">Monday - Friday:</span>9:00 AM -
-                6:00 PM
-                
-                <span className=" text-black fw-bold">Saturday: </span> 9:00 AM - 1:00 PM
-              
-                <span className=" fw-bold text-black">Sunday:</span>Closed
-             
+              <span className="text-black  fw-bold  ">Monday - Friday:</span>
+              9:00 AM - 6:00 PM
+              <span className=" text-black fw-bold">Saturday: </span> 9:00 AM -
+              1:00 PM
+              <span className=" fw-bold text-black">Sunday:</span>Closed
             </div>
           </div>
           <div className="col-lg-6 animate__animated animate__fadeInUp">
             <div
-              className="card shadow overflow-hidden "
+              className="card shadow overflow-hidden  opacity-75"
               style={{ height: "300px" }}
             >
               <iframe

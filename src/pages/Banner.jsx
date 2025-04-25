@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import { Typewriter } from "react-simple-typewriter";
-import bannerBg from "../assets/images/pattern logo.jpg"; 
+import bannerBg from "../assets/images/pattern logo.jpg";
 
 const Banner = () => {
   const bannerStyle = {
@@ -15,7 +16,7 @@ const Banner = () => {
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    zIndex: 1
+    zIndex: 1,
   };
 
   return (
@@ -26,7 +27,11 @@ const Banner = () => {
           <div className="col-md-6 text-white text-center text-md-start mb-4 mb-md-0">
             <h1 className="fw-bold" style={{ fontSize: "2.8rem" }}>
               <Typewriter
-                words={["Legal Assistance Made Simple"]}
+                words={[ "Legal Assistance Made Simple",
+                  "Expert Legal Guidance",
+                  "Connect with Lawyers",
+                  "Resolve Legal Issues",
+                  "Professional Legal Support",]}
                 loop={false}
                 cursor
                 cursorStyle="|"
@@ -40,16 +45,17 @@ const Banner = () => {
               expert legal advice and support when you need it most.
             </p>
             <div className="mt-4 d-flex flex-sm-row gap-3 justify-content-center justify-content-md-start">
-              <button
-                className="btn fw-bold"
+              <Link
+                to="/client/register"
+                className="btn fw-bold text-decoration-none"
                 style={{
                   backgroundColor: "#ffc107",
                   color: "#000",
-                  padding: "0.5rem 1.5rem"
+                  padding: "0.5rem 1.5rem",
                 }}
               >
                 Find a Lawyer
-              </button>
+              </Link>
               <button
                 className="btn btn-light fw-bold"
                 style={{ padding: "0.5rem 1.5rem" }}

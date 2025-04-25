@@ -1,0 +1,398 @@
+.sidebar {
+  width: 280px;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.main-content {
+  margin-left: 280px;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+/* Stats Cards */
+.stats-card {
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.stats-card:hover .icon-wrapper {
+  transform: scale(1.1);
+}
+
+/* Navigation */
+.nav-link {
+  color: #6c757d;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: #0d6efd;
+  background-color: rgba(13, 110, 253, 0.1);
+}
+
+.nav-link.active {
+  color: #0d6efd;
+  background-color: rgba(13, 110, 253, 0.1);
+  font-weight: 500;
+}
+
+.nav-link .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Table styles */
+.table th {
+  font-weight: 600;
+  color: #495057;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  border-bottom-width: 2px;
+  background-color: #f8f9fa;
+  white-space: nowrap;
+}
+
+.table td {
+  vertical-align: middle;
+  padding: 1rem;
+}
+
+/* Card styles */
+.card {
+  border: none;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Button styles */
+.btn-outline-primary {
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+}
+
+/* Form styles */
+.form-control {
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  max-width: 300px;
+}
+
+/* Sidebar bottom section */
+.sidebar .border-top {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  margin-top: auto;
+}
+
+.sidebar .btn-link {
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.sidebar .btn-link:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545 !important;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-toggle-container {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  text-align: center;
+}
+
+.mobile-toggle-btn {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  margin-bottom: 0.25rem;
+}
+
+.mobile-toggle-btn:hover {
+  background-color: #f8f9fa;
+}
+
+.mobile-toggle-btn .icon {
+  margin-bottom: 0.25rem;
+}
+
+.mobile-toggle-name {
+  font-size: 0.75rem;
+  color: #6c757d;
+  text-align: center;
+  line-height: 1;
+  font-weight: 500;
+}
+
+/* Overlay for mobile */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 240px;
+  }
+  .main-content {
+    margin-left: 240px;
+  }
+  .form-control {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 992px) {
+  .stats-card .icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+  .stats-card h3 {
+    font-size: 1.5rem;
+  }
+  .form-control {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle-container {
+    display: block;
+  }
+
+  .sidebar-overlay {
+    display: block;
+  }
+
+  .sidebar {
+    left: -280px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .sidebar-overlay.active {
+    opacity: 1;
+  }
+
+  /* Adjust content spacing for mobile */
+  .main-content .p-4 {
+    padding: 1rem !important;
+  }
+
+  /* Stack stats cards vertically on mobile */
+  .stats-card {
+    margin-bottom: 1rem;
+  }
+
+  /* Make table scrollable on mobile */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
+
+  /* Adjust header layout for mobile */
+  .d-flex.flex-column.flex-md-row {
+    flex-direction: column !important;
+  }
+
+  .d-flex.flex-column.flex-md-row > * {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  /* Adjust search bar for mobile */
+  .form-control {
+    max-width: 100%;
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  /* Adjust button sizes for mobile */
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  /* Adjust icon sizes for mobile */
+  .icon-wrapper {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Adjust card padding for mobile */
+  .card-body {
+    padding: 1rem;
+  }
+
+  .header-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .header-name {
+    font-size: 0.875rem;
+    margin-right: 0.5rem;
+  }
+
+  .header-user {
+    gap: 0.5rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 576px) {
+  .mobile-toggle-container {
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .mobile-toggle-btn {
+    min-width: 50px;
+    padding: 0.375rem;
+  }
+
+  .mobile-toggle-btn .icon {
+    margin-bottom: 0.125rem;
+  }
+
+  .mobile-toggle-name {
+    font-size: 0.625rem;
+  }
+
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* Further reduce padding and margins */
+  .p-4 {
+    padding: 0.75rem !important;
+  }
+
+  .mb-4 {
+    margin-bottom: 1rem !important;
+  }
+
+  /* Adjust table cell padding */
+  .table td,
+  .table th {
+    padding: 0.5rem;
+  }
+
+  /* Make buttons more compact */
+  .btn {
+    padding: 0.375rem 0.75rem;
+  }
+
+  /* Adjust icon sizes */
+  .icon {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* Header styles */
+.header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.header-avatar:hover {
+  border-color: #0d6efd;
+  transform: scale(1.05);
+}
+
+.header-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #495057;
+  margin-right: 1rem;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}

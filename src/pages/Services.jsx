@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import bgImage from "../assets/images/service.png"; 
+import law from "../assets/images/law-profession.jpg"
 
 const services = [
   {
@@ -38,6 +39,15 @@ const Services = () => {
         <h1 className="mb-5 fw-bold fs-1">
           Our <span className="text-warning fs-1">Services</span>
         </h1>
+        <div className="lawblock d-flex justify-content-center">
+          <img
+            src={law}
+            alt="law"
+            className="rounded-circle mb-3"
+            style={{ width: "200px", height: "200px", objectFit: "fit" }}
+          />
+        </div>
+
         <div className="row g-4">
           {services.map((service, index) => (
             <div

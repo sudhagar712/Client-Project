@@ -44,7 +44,7 @@ color:black;
 
 
 
-.card:hover {
+/* .card:hover {
   transform: translateY(-5px);
   transition: 0.3s ease-in-out;
   box-shadow: 0 0.9rem 2rem rgba(239, 237, 237, 0.15);
@@ -52,7 +52,7 @@ color:black;
   color:white;
 
 
-}
+} */
 
 .realproblemcolor{
    background-color: #012b5c;
@@ -215,5 +215,14 @@ color:black;
 .icon-teal { color: #20c997; }
 
 
+.btn-warning:hover {
+  background-color: #ffc107;
+  filter: brightness(1.1);
+  transition: 0.3s;
+}
 
-
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+  border-color: #ffc107;
+}

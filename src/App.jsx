@@ -1,27 +1,35 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Header from './components/Header/Header'
-import Home from './pages/Home/Home';
-import Services from './pages/Services';
-import Footer from './components/Footer/Footer';
-import Contact from './pages/Contact';
-import HowItWorks from './pages/HowitsWorks';
+import React from "react";
+import { BrowserRouter as Router, useLocation } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import AppRoutes from "./routes/AppRoutes";
 
-const App = () => {
+// Component to handle conditional rendering of header and footer
+const LayoutWrapper = ({ children }) => {
+  const location = useLocation();
+  const isAuthPage =
+    location.pathname.startsWith("/admin") ||
+    location.pathname.startsWith("/lawyer");
+
   return (
-    <div className="">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/service" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<HowItWorks />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+    <div className="flex flex-col min-h-screen">
+      {!isAuthPage && <Header />}
+      <main className="flex-grow">{children}</main>
+      {!isAuthPage && <Footer />}
     </div>
+  );
+};
+
+function App() {
+  return (
+    <Router>
+      <LayoutWrapper>
+        <AppRoutes />
+      </LayoutWrapper>
+    </Router>
   );
 }
 
-export default App
+export default App;
