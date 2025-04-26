@@ -13,9 +13,10 @@ const Banner = () => {
     display: "flex",
     alignItems: "center",
     backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0.39)), url(${bannerBg})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
+    backgroundSize: "fit",
+    
+  
+    backgroundRepeat: "repeat",
     zIndex: 1,
   };
 

@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.jpeg";
+import bgImage from "../../../assets/images/pattern logo.jpg";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -35,32 +36,39 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="min-vh-100 bg-light">
+    <div
+      className="min-vh-100"
+      style={{
+        backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0.39)), url(${bgImage})`,
+        backgroundSize: "fit",
+        backgroundRepeat: "repeat"
+      }}
+    >
       <main className="py-2">
         <Container fluid="lg" className="py-2">
           <Link
             to="/lawyer/login"
-            className="d-flex align-items-center text-navy-700 text-decoration-none mb-4"
+            className="d-flex align-items-center text-white fs-3 fw-bold text-decoration-none mb-4"
           >
             <i className="bi bi-chevron-left me-1"></i>
             Back to Login
           </Link>
 
           <Card
-            className="mx-auto shadow-sm my-5"
+            className="mx-auto shadow-sm my-5 opacity-75"
             style={{ maxWidth: "500px" }}
           >
-            <Card.Header className="text-center py-5">
+            <Card.Header className="text-center bg-primary py-5">
               <img
                 src={logo}
                 alt="LawForLayman Logo"
                 className="mb-3"
                 style={{ width: "60px", height: "60px", borderRadius: "50%" }}
               />
-              <Card.Title className="h2 text-navy-900 mb-3">
-                Reset Password
+              <Card.Title className="h2 mb-3">
+                Reset <span className="text-warning">Password</span>
               </Card.Title>
-              <Card.Text className="text-muted mb-0">
+              <Card.Text className="text-warning mb-0">
                 Enter your email address to receive password reset instructions
               </Card.Text>
             </Card.Header>
@@ -92,9 +100,9 @@ const ForgotPassword = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your registered email address"
                       required
-                      className="form-control-lg"
+                      className="form-control "
                     />
-                    <Form.Text className="text-muted">
+                    <Form.Text className="text-black">
                       We'll send password reset instructions to this email
                       address.
                     </Form.Text>
@@ -126,7 +134,7 @@ const ForgotPassword = () => {
                 Remember your password?{" "}
                 <Link
                   to="/lawyer/login"
-                  className="text-navy-700 text-decoration-none"
+                  className="text-warning fw-bold text-decoration-none"
                 >
                   Login here
                 </Link>

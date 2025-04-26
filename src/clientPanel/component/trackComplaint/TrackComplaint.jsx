@@ -9,6 +9,7 @@ import {
   Alert,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import bgImage from "../../../assets/images/service.png";
 
 const TrackComplaint = () => {
   const [referenceNumber, setReferenceNumber] = useState("");
@@ -59,23 +60,27 @@ const TrackComplaint = () => {
   };
 
   return (
-    <div className="min-vh-100 bg-light">
+    <div style={{
+            backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0.39)), url(${bgImage})`,
+            backgroundSize: "fit",
+            backgroundRepeat: "repeat"
+          }}>
       <main className="py-2">
         <Container fluid="lg" className="py-2">
           <Link
             to="/"
-            className="d-flex align-items-center text-navy-700 text-decoration-none mb-4"
+            className="d-flex align-items-center fs-3 text-white fw-bold text-decoration-none mb-4"
           >
             <i className="bi bi-chevron-left me-1"></i>
             Back to Home
           </Link>
 
           <Card
-            className="mx-auto shadow-sm my-5"
-            style={{ maxWidth: "800px" }}
+            className="mx-auto shadow-sm opacity-75 my-5"
+            style={{ maxWidth: "700px" }}
           >
             <Card.Header className="text-center py-5">
-              <Card.Title className="h2 text-navy-900 mb-3">
+              <Card.Title className="h2 bg-warning p-4 mb-3">
                 Track Your Complaint
               </Card.Title>
               <Card.Text className="text-muted mb-0">
@@ -87,22 +92,22 @@ const TrackComplaint = () => {
               <Form onSubmit={handleSearch} className="mb-4">
                 <Row className="g-3">
                   <Col xs={12}>
-                    <Form.Group controlId="referenceNumber">
-                      <Form.Label className="fw-medium">
+                    <Form.Group controlId="referenceNumber ">
+                      <Form.Label className="fw-medium ">
                         Reference Number
                       </Form.Label>
-                      <div className="d-flex gap-2">
+                      <div className="d-flex gap-3 justify-content-center align-items-center">
                         <Form.Control
                           type="text"
                           value={referenceNumber}
                           onChange={(e) => setReferenceNumber(e.target.value)}
                           placeholder="Enter your reference number (e.g., TN20240423XX)"
                           required
-                          className="form-control-lg"
+                          className="form-control  "
                         />
                         <Button
                           type="submit"
-                          className="btn-lg bg-navy-700 border-0 px-4"
+                          className=" btn btn-warning  px-4"
                           disabled={loading}
                         >
                           {loading ? (

@@ -9,7 +9,8 @@ import {
   Alert
 } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../../assets/logo.jpeg"; // Make sure the logo path is correct.
+import logo from "../../../assets/logo.jpeg"; 
+import bgImage from "../../../assets/images/pattern logo.jpg";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -33,12 +34,19 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-vh-100 bg-primary d-flex">
+    <div
+      className="min-vh-100 d-flex flex-column"
+      style={{
+        backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0.39)), url(${bgImage})`,
+        backgroundSize: "fit",
+        backgroundRepeat: "repeat"
+      }}
+    >
       <main className="py-2 w-100">
         <Container fluid="lg" className="py-2">
           <Link
             to="/"
-            className="d-flex align-items-center text-black fw-bold text-decoration-none mb-4"
+            className="d-flex align-items-center text-white fs-2 fw-bold text-decoration-none mb-4"
           >
             <i className="bi bi-chevron-left me-1"></i>
             Back to Home
@@ -46,7 +54,7 @@ const AdminLogin = () => {
 
           <Row className="justify-content-center align-items-center min-vh-100">
             {/* Left Side Image */}
-            <Col lg={6} className="d-none d-lg-flex justify-content-center">
+            <Col lg={6} className="d-none bg-primary opacity-25  p-5 d-lg-flex justify-content-center">
               <img
                 src={logo}
                 alt="LawForLayman Logo"
@@ -55,17 +63,14 @@ const AdminLogin = () => {
                   maxWidth: "400px",
                   maxHeight: "400px",
                   objectFit: "cover",
-                  borderRadius:"50%"
+                  borderRadius: "50%"
                 }}
               />
             </Col>
 
             {/* Right Side Form */}
             <Col lg={6}>
-              <Card
-                className="mx-auto shadow-sm my-5 bg-white"
-                style={{ maxWidth: "500px" }}
-              >
+              <Card className="bg-light opacity-75">
                 <Card.Header className="text-center py-5">
                   <img
                     src={logo}
@@ -77,64 +82,66 @@ const AdminLogin = () => {
                       borderRadius: "50%"
                     }}
                   />
-                  <Card.Title className="h2 text-navy-900 mb-3">
-                    Admin Login
+                  <Card.Title className=" mb-3 fs-1 fw-bold">
+                    Admin <span className="text-warning">Login</span>
                   </Card.Title>
-                  <Card.Text className="text-muted mb-0">
+                  <Card.Text className="text-warning fs-5 mb-0">
                     Sign in to access the admin dashboard
                   </Card.Text>
                 </Card.Header>
                 <Card.Body className="p-5">
-                  <Form onSubmit={handleSubmit}>
-                    {error && (
-                      <Alert variant="danger" className="mb-4">
-                        {error}
-                      </Alert>
-                    )}
-
-                    <Form.Group className="mb-4">
-                      <Form.Label className="fw-medium">Email</Form.Label>
-                      <Form.Control
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter your email"
-                        required
-                        className="form-control-lg"
-                      />
-                    </Form.Group>
-
-                    <Form.Group className="mb-4">
-                      <Form.Label className="fw-medium">Password</Form.Label>
-                      <Form.Control
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Enter your password"
-                        required
-                        className="form-control-lg"
-                      />
-                    </Form.Group>
-
-                    <Button
-                      type="submit"
-                      className="w-100 btn-lg bg-navy-700 border-0 py-3"
-                      disabled={loading}
-                    >
-                      {loading ? (
-                        <>
-                          <span
-                            className="spinner-border spinner-border-sm me-2"
-                            role="status"
-                            aria-hidden="true"
-                          ></span>
-                          Signing in...
-                        </>
-                      ) : (
-                        "Sign In"
+                  <div className="">
+                    <Form onSubmit={handleSubmit}>
+                      {error && (
+                        <Alert variant="danger" className="mb-4">
+                          {error}
+                        </Alert>
                       )}
-                    </Button>
-                  </Form>
+
+                      <Form.Group className="mb-4">
+                        <Form.Label className="fw-medium">Email</Form.Label>
+                        <Form.Control
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="Enter your email"
+                          required
+                          className="form-control"
+                        />
+                      </Form.Group>
+
+                      <Form.Group className="mb-4">
+                        <Form.Label className="fw-medium">Password</Form.Label>
+                        <Form.Control
+                          type="password"
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
+                          placeholder="Enter your password"
+                          required
+                          className="form-control"
+                        />
+                      </Form.Group>
+
+                      <Button
+                        type="submit"
+                        className="px-5  border-0 py-3"
+                        disabled={loading}
+                      >
+                        {loading ? (
+                          <>
+                            <span
+                              className="spinner-border spinner-border-sm me-2"
+                              role="status"
+                              aria-hidden="true"
+                            ></span>
+                            Signing in...
+                          </>
+                        ) : (
+                          "Sign In"
+                        )}
+                      </Button>
+                    </Form>
+                  </div>
                 </Card.Body>
                 <Card.Footer className="text-center py-4">
                   <div className="bg-navy-50 p-3 rounded">
