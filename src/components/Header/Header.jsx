@@ -20,7 +20,7 @@ function Header() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg p-1 headercontainer">
+      <nav className="navbar navbar-expand-lg p-3  headercontainer">
         <div className="container">
           <Link
             to="/"
@@ -61,7 +61,7 @@ function Header() {
               ></button>
             </div>
             <div className="offcanvas-body menubarcolor">
-              <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <ul className="navbar-nav justify-content-end gap-2  flex-grow-1 pe-3">
                 <li className="nav-item">
                   <Link
                     to="/"

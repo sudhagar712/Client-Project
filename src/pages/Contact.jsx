@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Person,
-  Envelope,
-  Telephone,
-  PencilSquare,
-  ChatDots
-} from "react-bootstrap-icons";
+
 
 
 const Contact = () => {
@@ -22,124 +16,104 @@ const Contact = () => {
 
         <div className="row g-4">
           {/* Contact Form */}
-          <div className="col-lg-6 animate__animated animate__fadeInUp">
+          <div className="col-lg-8 animate__animated animate__fadeInUp">
             <div className="cardcontact bg-primary opacity-75 d-flex justify-content-center ">
               <h4 className="fw-bold ">Join LawForLayman Today!</h4>
+            </div>
+
+            <div className="card p-4 mb-4 mt-4 shadow  bg-primary bg-opacity-75">
+              <h5 className="fw-bold mb-3 text-white fs-1">
+                Contact <span className="text-warning">Information</span>
+              </h5>
+
+              <div className="row text-start text-white p-5">
+                <div className="col-md-6 mb-4">
+                  <div className="mb-3">
+                    <h6 className="fw-bold text-warning">📍 Address</h6>
+                    <p className="mb-0">
+                      Kakkanji St,
+                      <br />
+                      Chennai, Tamil Nadu, India
+                    </p>
+                  </div>
+                  <div className="mb-3">
+                    <h6 className="fw-bold text-warning">📞 Phone</h6>
+                    <p className="mb-0">+91 9083522638</p>
+                  </div>
+                </div>
+
+                <div className="col-md-6 mb-4">
+                  <div className="mb-3">
+                    <h6 className="fw-bold text-warning">📧 Email</h6>
+                    <p className="mb-0">info@lawforlaymen.com</p>
+                  </div>
+                  <div className="mb-3">
+                    <h6 className="fw-bold text-warning">⏰ Business Hours</h6>
+                    <p className="mb-0">
+                      <strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM
+                      <br />
+                      <strong>Saturday:</strong> 9:00 AM - 1:00 PM
+                      <br />
+                      <strong>Sunday:</strong> Closed
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Contact Info and Map */}
-          <div className="col-lg-6 mx-auto">
+          <div className="col-lg-4 mx-auto">
             <div
-              className="card p-5 shadow-lg border-0"
+              className="card  p-5 shadow-lg border-0"
               style={{
                 background: "rgba(13, 110, 253, 0.75)",
                 backdropFilter: "blur(10px)",
                 borderRadius: "1rem"
               }}
             >
-              <h3 className="fw-bold mb-4 text-white text-center">
+              <h2 className="fw-bolder mb-4 text-white text-center">
                 Send Us a <span className="text-warning">Message</span>
-              </h3>
-              <form className="w-100">
-                {/* Full Name */}
-                <div className="mb-3 input-group w-100">
-                  <span className="input-group-text bg-white text-primary fs-5 border-end-0">
-                    <Person />
-                  </span>
+              </h2>
+
+              <div>
+                <form>
                   <input
                     type="text"
-                    className="form-control border-start-0"
-                    placeholder="Full Name"
+                    className="form-control mb-3"
+                    placeholder="Enter a name"
                   />
-                </div>
-
-                {/* Email */}
-                <div className="mb-3 input-group w-100">
-                  <span className="input-group-text bg-white text-primary fs-5 border-end-0">
-                    <Envelope />
-                  </span>
                   <input
                     type="email"
-                    className="form-control border-start-0"
-                    placeholder="Email Address"
+                    className="form-control mb-3"
+                    placeholder="Enter a email address"
                   />
-                </div>
-
-                {/* Phone */}
-                <div className="mb-3 input-group w-100">
-                  <span className="input-group-text bg-white text-primary fs-5 border-end-0">
-                    <Telephone />
-                  </span>
                   <input
-                    type="text"
-                    className="form-control border-start-0"
-                    placeholder="Phone Number"
+                    type="tel"
+                    className="form-control mb-3"
+                    placeholder="Enter a phone Number"
                   />
-                </div>
-
-                {/* Subject */}
-                <div className="mb-3 input-group w-100">
-                  <span className="input-group-text bg-white text-primary fs-5 border-end-0">
-                    <PencilSquare />
-                  </span>
-                  <input
-                    type="text"
-                    className="form-control border-start-0"
-                    placeholder="Subject"
-                  />
-                </div>
-
-                {/* Message */}
-                <div className="mb-4 input-group w-100">
-                  <span className="input-group-text bg-white text-primary fs-5 border-end-0">
-                    <ChatDots />
-                  </span>
                   <textarea
-                    className="form-control border-start-0"
-                    rows="4"
-                    placeholder="Your Message"
+                    name=""
+                    className="form-control"
+                    placeholder="Message here"
+                    id=""
                   ></textarea>
-                </div>
-
-                {/* Submit Button */}
-                <button className="btn btn-warning w-100 fw-bold py-3 fs-5 shadow-sm">
-                  Send Message
-                </button>
-              </form>
+                  <div>
+                    <button className="w-100 btn btn-warning mt-3 fw-bold">
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="row g-4 mt-3">
-          <div className="col-lg-6 animate__animated animate__fadeInUp">
-            <div className="card p-4 mb-4 shadow text-left  bg-white bg-opacity-25">
-              <h5 className="fw-bold mb-3 text-black fs-1">
-                Contact <span className="text-warning">Information</span>
-              </h5>
-              <p className="text-black ">
-                <strong>📍 Address:</strong> Kakkanji St, Chennai, Tamil Nadu,
-                India
-              </p>
-              <p className="text-black ">
-                <strong>📞 Phone:</strong> +91 9083522638
-              </p>
-              <p className="text-black ">
-                <strong>📧 Email:</strong> info@lawforlaymen.com
-              </p>
-              <p className="text-black  ">
-                <strong>⏰ Business Hours:</strong>
-              </p>
-              <span className="text-black  fw-bold  ">Monday - Friday:</span>
-              9:00 AM - 6:00 PM
-              <span className=" text-black fw-bold">Saturday: </span> 9:00 AM -
-              1:00 PM
-              <span className=" fw-bold text-black">Sunday:</span>Closed
-            </div>
-          </div>
-          <div className="col-lg-6 animate__animated animate__fadeInUp">
+          <div className="col-lg-12 animate__animated animate__fadeInUp">
             <div
-              className="card shadow overflow-hidden  opacity-75"
+              className="card  shadow overflow-hidden  "
               style={{ height: "300px" }}
             >
               <iframe
