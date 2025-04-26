@@ -6,10 +6,10 @@ import {
   Form,
   Button,
   Card,
-  Alert
+  Alert,
 } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../../assets/logo.jpeg"; 
+import logo from "../../../assets/logo.jpeg";
 import bgImage from "../../../assets/images/pattern logo.jpg";
 
 const AdminLogin = () => {
@@ -37,123 +37,168 @@ const AdminLogin = () => {
     <div
       className="min-vh-100 d-flex flex-column"
       style={{
-        backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0.39)), url(${bgImage})`,
-        backgroundSize: "fit",
-        backgroundRepeat: "repeat"
+        backgroundImage: `linear-gradient(rgba(1, 43, 92, 0.9), rgba(1, 43, 92, 0.7)), url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      <main className="py-2 w-100">
-        <Container fluid="lg" className="py-2">
+      <main className="py-4 w-100">
+        <Container fluid="lg" className="py-4">
           <Link
             to="/"
-            className="d-flex align-items-center text-white fs-2 fw-bold text-decoration-none mb-4"
+            className="d-flex align-items-center text-white fs-5 fw-medium text-decoration-none mb-4"
+            style={{ transition: "all 0.3s ease" }}
           >
-            <i className="bi bi-chevron-left me-1"></i>
+            <i className="bi bi-arrow-left me-2"></i>
             Back to Home
           </Link>
 
           <Row className="justify-content-center align-items-center min-vh-100">
             {/* Left Side Image */}
-            <Col lg={6} className="d-none bg-primary opacity-25  p-5 d-lg-flex justify-content-center">
-              <img
-                src={logo}
-                alt="LawForLayman Logo"
-                className="img-fluid"
-                style={{
-                  maxWidth: "400px",
-                  maxHeight: "400px",
-                  objectFit: "cover",
-                  borderRadius: "50%"
-                }}
-              />
+            <Col
+              lg={6}
+              className="d-none d-lg-flex justify-content-center align-items-center"
+            >
+              <div className="text-center">
+                <img
+                  src={logo}
+                  alt="LawForLayman Logo"
+                  className="img-fluid mb-4"
+                  style={{
+                    maxWidth: "300px",
+                    maxHeight: "300px",
+                    objectFit: "cover",
+                    borderRadius: "50%",
+                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
+                  }}
+                />
+                <h2 className="text-white fw-bold mb-3">Welcome Back!</h2>
+                <p className="text-white-50">
+                  Please login to access the admin dashboard
+                </p>
+              </div>
             </Col>
 
             {/* Right Side Form */}
             <Col lg={6}>
-              <Card className="bg-light opacity-75">
-                <Card.Header className="text-center py-5">
+              <Card
+                className="border-0 shadow-lg"
+                style={{ borderRadius: "15px" }}
+              >
+                <Card.Header className="bg-transparent border-0 text-center py-4">
                   <img
                     src={logo}
                     alt="LawForLayman Logo"
                     className="mb-3"
                     style={{
-                      width: "60px",
-                      height: "60px",
-                      borderRadius: "50%"
+                      width: "80px",
+                      height: "80px",
+                      borderRadius: "50%",
+                      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
                     }}
                   />
-                  <Card.Title className=" mb-3 fs-1 fw-bold">
-                    Admin <span className="text-warning">Login</span>
+                  <Card.Title className="mb-2 fs-2 fw-bold text-primary">
+                    Admin Login
                   </Card.Title>
-                  <Card.Text className="text-warning fs-5 mb-0">
-                    Sign in to access the admin dashboard
+                  <Card.Text className="text-muted">
+                    Enter your credentials to continue
                   </Card.Text>
                 </Card.Header>
-                <Card.Body className="p-5">
-                  <div className="">
-                    <Form onSubmit={handleSubmit}>
-                      {error && (
-                        <Alert variant="danger" className="mb-4">
-                          {error}
-                        </Alert>
-                      )}
+                <Card.Body className="p-4 p-md-5">
+                  <Form onSubmit={handleSubmit}>
+                    {error && (
+                      <Alert
+                        variant="danger"
+                        className="mb-4"
+                        style={{ borderRadius: "10px" }}
+                      >
+                        <i className="bi bi-exclamation-circle me-2"></i>
+                        {error}
+                      </Alert>
+                    )}
 
-                      <Form.Group className="mb-4">
-                        <Form.Label className="fw-medium">Email</Form.Label>
+                    <Form.Group className="mb-4">
+                      <Form.Label className="fw-medium text-muted">
+                        Email Address
+                      </Form.Label>
+                      <div className="input-group">
+                        <span className="input-group-text bg-light border-end-0">
+                          <i className="bi bi-envelope text-muted"></i>
+                        </span>
                         <Form.Control
                           type="email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="Enter your email"
                           required
-                          className="form-control"
+                          className="border-start-0"
+                          style={{ height: "50px" }}
                         />
-                      </Form.Group>
+                      </div>
+                    </Form.Group>
 
-                      <Form.Group className="mb-4">
-                        <Form.Label className="fw-medium">Password</Form.Label>
+                    <Form.Group className="mb-4">
+                      <Form.Label className="fw-medium text-muted">
+                        Password
+                      </Form.Label>
+                      <div className="input-group">
+                        <span className="input-group-text bg-light border-end-0">
+                          <i className="bi bi-lock text-muted"></i>
+                        </span>
                         <Form.Control
                           type="password"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           placeholder="Enter your password"
                           required
-                          className="form-control"
+                          className="border-start-0"
+                          style={{ height: "50px" }}
                         />
-                      </Form.Group>
+                      </div>
+                    </Form.Group>
 
-                      <Button
-                        type="submit"
-                        className="px-5  border-0 py-3"
-                        disabled={loading}
-                      >
-                        {loading ? (
-                          <>
-                            <span
-                              className="spinner-border spinner-border-sm me-2"
-                              role="status"
-                              aria-hidden="true"
-                            ></span>
-                            Signing in...
-                          </>
-                        ) : (
-                          "Sign In"
-                        )}
-                      </Button>
-                    </Form>
-                  </div>
+                    <Button
+                      type="submit"
+                      className="w-100 py-3 mt-4"
+                      disabled={loading}
+                      style={{
+                        background: "linear-gradient(45deg, #012b5c, #1a4b8c)",
+                        border: "none",
+                        borderRadius: "10px",
+                        fontSize: "1.1rem",
+                      }}
+                    >
+                      {loading ? (
+                        <>
+                          <span
+                            className="spinner-border spinner-border-sm me-2"
+                            role="status"
+                            aria-hidden="true"
+                          ></span>
+                          Signing in...
+                        </>
+                      ) : (
+                        <>
+                          <i className="bi bi-box-arrow-in-right me-2"></i>
+                          Sign In
+                        </>
+                      )}
+                    </Button>
+                  </Form>
                 </Card.Body>
-                <Card.Footer className="text-center py-4">
-                  <div className="bg-navy-50 p-3 rounded">
-                    <p className="mb-1 fw-medium text-navy-700">
-                      Demo Credentials:
+                <Card.Footer className="bg-light border-0 text-center py-4">
+                  <div
+                    className="p-3 rounded"
+                    style={{ background: "rgba(1, 43, 92, 0.05)" }}
+                  >
+                    <p className="mb-2 fw-medium text-primary">
+                      Demo Credentials
                     </p>
-                    <p className="mb-0 small text-navy-700">
+                    <p className="mb-1 small text-muted">
                       Email: admin@demo.com
                     </p>
-                    <p className="mb-0 small text-navy-700">
-                      Password: admin123
-                    </p>
+                    <p className="mb-0 small text-muted">Password: admin123</p>
                   </div>
                 </Card.Footer>
               </Card>

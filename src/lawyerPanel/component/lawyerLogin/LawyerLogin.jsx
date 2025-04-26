@@ -6,7 +6,7 @@ import {
   Form,
   Button,
   Card,
-  Alert
+  Alert,
 } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.jpeg";
@@ -36,138 +36,189 @@ const LawyerLogin = () => {
     <div
       className="min-vh-100 d-flex flex-column"
       style={{
-        backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0.39)), url(${bgImage})`,
-        backgroundSize: "fit",
-        backgroundRepeat: "repeat"
+        backgroundImage: `linear-gradient(rgba(1, 43, 92, 0.9), rgba(1, 43, 92, 0.7)), url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      <main className="py-2 flex-grow-1">
-        <Container fluid="lg" className="py-2">
+      <main className="py-4 w-100">
+        <Container fluid="lg" className="py-4">
           <Link
             to="/"
-            className="d-flex align-items-center fw-bold fs-3 justify-content-start  text-white text-decoration-none mb-4"
+            className="d-flex align-items-center text-white fs-5 fw-medium text-decoration-none mb-4"
+            style={{ transition: "all 0.3s ease" }}
           >
-            <i className="bi bi-chevron-left me-1"></i>
+            <i className="bi bi-arrow-left me-2"></i>
             Back to Home
           </Link>
 
-          <Card className="bg-transparent ">
-            <Row className="g-0 ">
+          <Card className="border-0 shadow-lg" style={{ borderRadius: "15px" }}>
+            <Row className="g-0">
               {/* Left Side - Logo and Welcome Text */}
               <Col
                 md={5}
-                className="d-flex flex-column align-items-center justify-content-center  bg-primary opacity-75   text-center rounded-start"
+                className="d-flex flex-column align-items-center justify-content-center p-5 text-center"
+                style={{
+                  background: "linear-gradient(45deg, #012b5c, #1a4b8c)",
+                  borderRadius: "15px 0 0 15px",
+                }}
               >
                 <img
                   src={logo}
                   alt="LawForLayman Logo"
+                  className="mb-4"
                   style={{
-                    width: "300px",
-                    height: "300px",
+                    width: "200px",
+                    height: "200px",
                     borderRadius: "50%",
-                    marginBottom: "20px"
+                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
                   }}
                 />
-                <h2 className="fs-1 text-white fw-bolder">Welcome Back!</h2>
-                <p className="mt-2 text-warning">
-                  Sign in to access your Lawyer Dashboard.
+                <h2 className="text-white fw-bold mb-3">Welcome Back!</h2>
+                <p className="text-white-50">
+                  Sign in to access your Lawyer Dashboard
                 </p>
               </Col>
 
               {/* Right Side - Login Form */}
-              <Col md={7} className="p-5 bg-light opacity-75">
-                <div className="d-flex flex-column justify-content-center">
-                  <h3 className=" fw-bold fs-1 mb-4  ">
-                    Lawyer <span className="text-warning ">Login</span>{" "}
-                  </h3>
+              <Col md={7} className="p-4 p-md-5">
+                <div className="d-flex flex-column justify-content-center h-100">
+                  <div className="text-center mb-4">
+                    <img
+                      src={logo}
+                      alt="LawForLayman Logo"
+                      className="mb-3"
+                      style={{
+                        width: "80px",
+                        height: "80px",
+                        borderRadius: "50%",
+                        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                      }}
+                    />
+                    <h3 className="fs-2 fw-bold text-primary mb-2">
+                      Lawyer Login
+                    </h3>
+                    <p className="text-muted">
+                      Enter your credentials to continue
+                    </p>
+                  </div>
+
                   <Form onSubmit={handleSubmit}>
                     {error && (
-                      <Alert variant="danger" className="mb-4">
+                      <Alert
+                        variant="danger"
+                        className="mb-4"
+                        style={{ borderRadius: "10px" }}
+                      >
+                        <i className="bi bi-exclamation-circle me-2"></i>
                         {error}
                       </Alert>
                     )}
-                    <div className="d-flex flex-column justify-content-center  ">
-                      <Form.Group className="mb-4 ">
-                        <Form.Label className="fw-medium">Email</Form.Label>
+
+                    <Form.Group className="mb-4">
+                      <Form.Label className="fw-medium text-muted">
+                        Email Address
+                      </Form.Label>
+                      <div className="input-group">
+                        <span className="input-group-text bg-light border-end-0">
+                          <i className="bi bi-envelope text-muted"></i>
+                        </span>
                         <Form.Control
                           type="email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="Enter your email"
                           required
-                          className="form-control"
+                          className="border-start-0"
+                          style={{ height: "50px" }}
                         />
-                      </Form.Group>
+                      </div>
+                    </Form.Group>
 
-                      <Form.Group className="mb-4">
-                        <div className="d-flex justify-content-between align-items-center mb-2">
-                          <Form.Label className="fw-medium mb-0">
-                            Password
-                          </Form.Label>
-                        </div>
+                    <Form.Group className="mb-4">
+                      <div className="d-flex justify-content-between align-items-center mb-2">
+                        <Form.Label className="fw-medium text-muted mb-0">
+                          Password
+                        </Form.Label>
+                        <Link
+                          to="/lawyer/forgot-password"
+                          className="text-primary text-decoration-none small"
+                        >
+                          Forgot password?
+                        </Link>
+                      </div>
+                      <div className="input-group">
+                        <span className="input-group-text bg-light border-end-0">
+                          <i className="bi bi-lock text-muted"></i>
+                        </span>
                         <Form.Control
                           type="password"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           placeholder="Enter your password"
                           required
-                          className="form-control w-100"
+                          className="border-start-0"
+                          style={{ height: "50px" }}
                         />
-                      </Form.Group>
+                      </div>
+                    </Form.Group>
+
+                    <Button
+                      type="submit"
+                      className="w-100 py-3 mt-4"
+                      disabled={loading}
+                      style={{
+                        background: "linear-gradient(45deg, #012b5c, #1a4b8c)",
+                        border: "none",
+                        borderRadius: "10px",
+                        fontSize: "1.1rem",
+                      }}
+                    >
+                      {loading ? (
+                        <>
+                          <span
+                            className="spinner-border spinner-border-sm me-2"
+                            role="status"
+                            aria-hidden="true"
+                          ></span>
+                          Signing in...
+                        </>
+                      ) : (
+                        <>
+                          <i className="bi bi-box-arrow-in-right me-2"></i>
+                          Sign In
+                        </>
+                      )}
+                    </Button>
+
+                    <div className="text-center mt-4">
+                      <p className="text-muted mb-0">
+                        Don't have an account?{" "}
+                        <Link
+                          to="/lawyer/register"
+                          className="text-primary text-decoration-none"
+                        >
+                          Register here
+                        </Link>
+                      </p>
                     </div>
 
-                    <Link
-                      to="/lawyer/forgot-password"
-                      className="text-navy-700 text-decoration-none small"
+                    <div
+                      className="mt-4 p-3 rounded"
+                      style={{ background: "rgba(1, 43, 92, 0.05)" }}
                     >
-                      Forgot password?
-                    </Link>
-
-                    <div className="mt-3">
-                      <Button
-                        type="submit"
-                        className="px-5 btn btn-primary  text-white fw-bold border-0 py-3"
-                        disabled={loading}
-                      >
-                        {loading ? (
-                          <>
-                            <span
-                              className="spinner-border spinner-border-sm me-2"
-                              role="status"
-                              aria-hidden="true"
-                            ></span>
-                            Signing in...
-                          </>
-                        ) : (
-                          "Sign In"
-                        )}
-                      </Button>
+                      <p className="mb-2 fw-medium text-primary">
+                        Demo Credentials
+                      </p>
+                      <p className="mb-1 small text-muted">
+                        Email: lawyer@demo.com
+                      </p>
+                      <p className="mb-0 small text-muted">
+                        Password: lawyer123
+                      </p>
                     </div>
                   </Form>
-                </div>
-
-                <div className="text-center mt-4">
-                  <p className="text-muted">
-                    Don't have an account?{" "}
-                    <Link
-                      to="/lawyer/register"
-                      className="text-navy-700 text-decoration-none"
-                    >
-                      Register here
-                    </Link>
-                  </p>
-                  <hr className="mt-5 text-white " />
-                  <div className="bg-navy-50 p-3 rounded mt-3">
-                    <p className="mb-1 fw-medium text-navy-700">
-                      Demo Credentials:
-                    </p>
-                    <p className="mb-0 small text-navy-700">
-                      Email: lawyer@demo.com
-                    </p>
-                    <p className="mb-0 small text-navy-700">
-                      Password: lawyer123
-                    </p>
-                  </div>
                 </div>
               </Col>
             </Row>

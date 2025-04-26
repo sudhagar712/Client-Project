@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.jpeg";
+import bgImage from "../../../assets/images/pattern logo.jpg";
 
 const RegisterComplaint = () => {
   const navigate = useNavigate();
@@ -49,31 +50,51 @@ const RegisterComplaint = () => {
   };
 
   return (
-    <div className="min-vh-100 bg-light">
-      <main className="py-1">
-        <Container fluid="lg" className="py-1">
+    <div
+      className="min-vh-100 d-flex flex-column"
+      style={{
+        backgroundImage: `linear-gradient(rgba(1, 43, 92, 0.9), rgba(1, 43, 92, 0.7)), url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <main className="py-4 w-100">
+        <Container fluid="lg" className="py-4">
           <Link
             to="/"
-            className="d-flex align-items-center text-navy-700 text-decoration-none mb-4"
+            className="d-flex align-items-center text-white fs-5 fw-medium text-decoration-none mb-4"
+            style={{ transition: "all 0.3s ease" }}
           >
-            <i className="bi bi-chevron-left me-1"></i>
+            <i className="bi bi-arrow-left me-2"></i>
             Back to Home
           </Link>
 
           <Card
-            className="mx-auto shadow-sm my-5"
-            style={{ maxWidth: "800px" }}
+            className="border-0 shadow-lg mx-auto"
+            style={{ maxWidth: "1000px", borderRadius: "15px" }}
           >
-            <Card.Header className="text-center py-5">
-              <Card.Title className="h2 text-navy-900 mb-3">
+            <Card.Header className="bg-transparent border-0 text-center py-4">
+              <img
+                src={logo}
+                alt="LawForLayman Logo"
+                className="mb-3"
+                style={{
+                  width: "80px",
+                  height: "80px",
+                  borderRadius: "50%",
+                  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                }}
+              />
+              <Card.Title className="mb-2 fs-2 fw-bold text-primary">
                 Register a Complaint
               </Card.Title>
-              <Card.Text className="text-muted mb-0">
+              <Card.Text className="text-muted">
                 Fill out the form below to register your legal complaint. You
                 will receive a reference number for tracking.
               </Card.Text>
             </Card.Header>
-            <Card.Body className="p-5">
+            <Card.Body className="p-4 p-md-5">
               <Form
                 onSubmit={handleSubmit}
                 className="needs-validation"
@@ -82,161 +103,225 @@ const RegisterComplaint = () => {
                 <Row className="g-4">
                   <Col xs={12} md={6}>
                     <Form.Group controlId="name">
-                      <Form.Label className="fw-medium">Full Name</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Enter your full name"
-                        required
-                        className="form-control-lg"
-                      />
+                      <Form.Label className="fw-medium text-muted">
+                        Full Name
+                      </Form.Label>
+                      <div className="input-group">
+                        <span className="input-group-text bg-light border-end-0">
+                          <i className="bi bi-person text-muted"></i>
+                        </span>
+                        <Form.Control
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Enter your full name"
+                          required
+                          className="border-start-0"
+                          style={{ height: "50px" }}
+                        />
+                      </div>
                     </Form.Group>
                   </Col>
                   <Col xs={12} md={6}>
                     <Form.Group controlId="sonOf">
-                      <Form.Label className="fw-medium">
+                      <Form.Label className="fw-medium text-muted">
                         Son/Daughter of
                       </Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="sonOf"
-                        value={formData.sonOf}
-                        onChange={handleChange}
-                        placeholder="Enter parent/guardian name"
-                        required
-                        className="form-control-lg"
-                      />
+                      <div className="input-group">
+                        <span className="input-group-text bg-light border-end-0">
+                          <i className="bi bi-people text-muted"></i>
+                        </span>
+                        <Form.Control
+                          type="text"
+                          name="sonOf"
+                          value={formData.sonOf}
+                          onChange={handleChange}
+                          placeholder="Enter parent/guardian name"
+                          required
+                          className="border-start-0"
+                          style={{ height: "50px" }}
+                        />
+                      </div>
                     </Form.Group>
                   </Col>
 
                   <Col xs={12} md={6}>
                     <Form.Group controlId="dob">
-                      <Form.Label className="fw-medium">
+                      <Form.Label className="fw-medium text-muted">
                         Date of Birth
                       </Form.Label>
-                      <Form.Control
-                        type="date"
-                        name="dob"
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
-                        required
-                        className="form-control-lg"
-                      />
+                      <div className="input-group">
+                        <span className="input-group-text bg-light border-end-0">
+                          <i className="bi bi-calendar text-muted"></i>
+                        </span>
+                        <Form.Control
+                          type="date"
+                          name="dob"
+                          value={date}
+                          onChange={(e) => setDate(e.target.value)}
+                          required
+                          className="border-start-0"
+                          style={{ height: "50px" }}
+                        />
+                      </div>
                     </Form.Group>
                   </Col>
                   <Col xs={12} md={6}>
                     <Form.Group controlId="mobile">
-                      <Form.Label className="fw-medium">
+                      <Form.Label className="fw-medium text-muted">
                         Mobile Number
                       </Form.Label>
-                      <Form.Control
-                        type="tel"
-                        name="mobile"
-                        value={formData.mobile}
-                        onChange={handleChange}
-                        placeholder="Enter your mobile number"
-                        required
-                        className="form-control-lg"
-                      />
+                      <div className="input-group">
+                        <span className="input-group-text bg-light border-end-0">
+                          <i className="bi bi-phone text-muted"></i>
+                        </span>
+                        <Form.Control
+                          type="tel"
+                          name="mobile"
+                          value={formData.mobile}
+                          onChange={handleChange}
+                          placeholder="Enter your mobile number"
+                          required
+                          className="border-start-0"
+                          style={{ height: "50px" }}
+                        />
+                      </div>
                     </Form.Group>
                   </Col>
 
                   <Col xs={12}>
                     <Form.Group controlId="email">
-                      <Form.Label className="fw-medium">
+                      <Form.Label className="fw-medium text-muted">
                         Email Address
                       </Form.Label>
-                      <Form.Control
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Enter your email address"
-                        required
-                        className="form-control-lg"
-                      />
+                      <div className="input-group">
+                        <span className="input-group-text bg-light border-end-0">
+                          <i className="bi bi-envelope text-muted"></i>
+                        </span>
+                        <Form.Control
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="Enter your email address"
+                          required
+                          className="border-start-0"
+                          style={{ height: "50px" }}
+                        />
+                      </div>
                     </Form.Group>
                   </Col>
 
                   <Col xs={12}>
                     <Form.Group controlId="address">
-                      <Form.Label className="fw-medium">Address</Form.Label>
-                      <Form.Control
-                        as="textarea"
-                        name="address"
-                        value={formData.address}
-                        onChange={handleChange}
-                        placeholder="Enter your full address"
-                        required
-                        className="form-control-lg"
-                        rows={3}
-                      />
+                      <Form.Label className="fw-medium text-muted">
+                        Address
+                      </Form.Label>
+                      <div className="input-group">
+                        <span className="input-group-text bg-light border-end-0">
+                          <i className="bi bi-geo-alt text-muted"></i>
+                        </span>
+                        <Form.Control
+                          as="textarea"
+                          name="address"
+                          value={formData.address}
+                          onChange={handleChange}
+                          placeholder="Enter your full address"
+                          required
+                          className="border-start-0"
+                          style={{ height: "100px" }}
+                        />
+                      </div>
                     </Form.Group>
                   </Col>
 
                   <Col xs={12} md={6}>
                     <Form.Group controlId="pincode">
-                      <Form.Label className="fw-medium">Pincode</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="pincode"
-                        value={formData.pincode}
-                        onChange={handleChange}
-                        placeholder="Enter your pincode"
-                        required
-                        className="form-control-lg"
-                      />
+                      <Form.Label className="fw-medium text-muted">
+                        Pincode
+                      </Form.Label>
+                      <div className="input-group">
+                        <span className="input-group-text bg-light border-end-0">
+                          <i className="bi bi-pin-map text-muted"></i>
+                        </span>
+                        <Form.Control
+                          type="text"
+                          name="pincode"
+                          value={formData.pincode}
+                          onChange={handleChange}
+                          placeholder="Enter your pincode"
+                          required
+                          className="border-start-0"
+                          style={{ height: "50px" }}
+                        />
+                      </div>
                     </Form.Group>
                   </Col>
                   <Col xs={12} md={6}>
                     <Form.Group controlId="complaintType">
-                      <Form.Label className="fw-medium">
+                      <Form.Label className="fw-medium text-muted">
                         Type of Complaint
                       </Form.Label>
-                      <Form.Select
-                        name="complaintType"
-                        value={formData.complaintType}
-                        onChange={handleChange}
-                        required
-                        className="form-select-lg"
-                      >
-                        <option value="">Select complaint type</option>
-                        <option value="property">Property Dispute</option>
-                        <option value="family">Family Matter</option>
-                        <option value="criminal">Criminal Case</option>
-                        <option value="civil">Civil Dispute</option>
-                        <option value="consumer">Consumer Complaint</option>
-                        <option value="corporate">Corporate Law</option>
-                        <option value="other">Other</option>
-                      </Form.Select>
+                      <div className="input-group">
+                        <span className="input-group-text bg-light border-end-0">
+                          <i className="bi bi-file-earmark-text text-muted"></i>
+                        </span>
+                        <Form.Select
+                          name="complaintType"
+                          value={formData.complaintType}
+                          onChange={handleChange}
+                          required
+                          className="border-start-0"
+                          style={{ height: "50px" }}
+                        >
+                          <option value="">Select complaint type</option>
+                          <option value="property">Property Dispute</option>
+                          <option value="family">Family Matter</option>
+                          <option value="criminal">Criminal Case</option>
+                          <option value="civil">Civil Dispute</option>
+                          <option value="consumer">Consumer Complaint</option>
+                          <option value="corporate">Corporate Law</option>
+                          <option value="other">Other</option>
+                        </Form.Select>
+                      </div>
                     </Form.Group>
                   </Col>
 
                   <Col xs={12}>
                     <Form.Group controlId="description">
-                      <Form.Label className="fw-medium">
+                      <Form.Label className="fw-medium text-muted">
                         Description of Complaint
                       </Form.Label>
-                      <Form.Control
-                        as="textarea"
-                        name="description"
-                        value={formData.description}
-                        onChange={handleChange}
-                        placeholder="Please provide detailed information about your complaint"
-                        required
-                        className="form-control-lg"
-                        rows={4}
-                      />
+                      <div className="input-group">
+                        <span className="input-group-text bg-light border-end-0">
+                          <i className="bi bi-pencil text-muted"></i>
+                        </span>
+                        <Form.Control
+                          as="textarea"
+                          name="description"
+                          value={formData.description}
+                          onChange={handleChange}
+                          placeholder="Please provide detailed information about your complaint"
+                          required
+                          className="border-start-0"
+                          style={{ height: "150px" }}
+                        />
+                      </div>
                     </Form.Group>
                   </Col>
 
                   <Col xs={12}>
                     <Button
                       type="submit"
-                      className="w-100 btn-lg bg-navy-700 border-0 py-3"
+                      className="w-100 py-3 mt-4"
                       disabled={loading}
+                      style={{
+                        background: "linear-gradient(45deg, #012b5c, #1a4b8c)",
+                        border: "none",
+                        borderRadius: "10px",
+                        fontSize: "1.1rem",
+                      }}
                     >
                       {loading ? (
                         <>
@@ -248,7 +333,10 @@ const RegisterComplaint = () => {
                           Processing...
                         </>
                       ) : (
-                        "Register a Complaint"
+                        <>
+                          <i className="bi bi-send me-2"></i>
+                          Register Complaint
+                        </>
                       )}
                     </Button>
                   </Col>
