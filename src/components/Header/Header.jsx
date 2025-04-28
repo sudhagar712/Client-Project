@@ -19,7 +19,7 @@ function Header() {
   };
 
   return (
-    <>
+    <div>
       <nav className="navbar navbar-expand-lg p-3  headercontainer">
         <div className="container">
           <Link
@@ -104,11 +104,11 @@ function Header() {
                     onClick={toggleDropdown}
                     style={{ cursor: "pointer" }}
                   >
-                    <FaUserCircle size={24} />
+                    <FaUserCircle size={24}  />
                   </div>
                   {showDropdown && (
                     <div
-                      className="dropdown-menu show"
+                      className="dropdown-menu show bg-warning opacity-75 bg-light p-4"
                       style={{ position: "absolute", right: 0 }}
                     >
                       <Link
@@ -118,6 +118,7 @@ function Header() {
                       >
                         Track Complaint
                       </Link>
+                      <hr />
                       <Link
                         to="/lawyer/login"
                         className="dropdown-item"
@@ -125,6 +126,7 @@ function Header() {
                       >
                         Lawyer Login
                       </Link>
+                      <hr />
                       <Link
                         to="/admin/login"
                         className="dropdown-item"
@@ -132,6 +134,7 @@ function Header() {
                       >
                         Admin Login
                       </Link>
+                    
                     </div>
                   )}
                 </li>
@@ -157,7 +160,7 @@ function Header() {
           </Link>
         </div>
       </div> */}
-    </>
+    </div>
   );
 }
 

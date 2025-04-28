@@ -229,6 +229,7 @@ textarea:focus {
 
 
 .nav-link:hover {
-  background-color: #ffc107; 
+  background-color: #ffc107a3; 
   color:#012b5c;
+  border-radius:10px;
 }
