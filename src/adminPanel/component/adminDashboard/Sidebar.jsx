@@ -1,16 +1,16 @@
 import React from "react";
 import {
-  HouseDoor,
-  Briefcase,
-  Calendar,
-  People,
-  Gear,
+  HouseDoor, 
+  FileText, 
+  PersonCircle, 
+  Calendar2Event, 
+  BarChart, 
+  Gear, 
   BoxArrowRight,
   List
-} from "react-bootstrap-icons";
-import logo from "../../../assets/images/logo.png"
+} from "react-bootstrap-icons"; 
+import logo from "../../../assets/images/logo.png";
 import { Link } from "react-router-dom";
-
 
 const Sidebar = () => {
   return (
@@ -29,19 +29,16 @@ const Sidebar = () => {
 
       {/* Offcanvas Sidebar for Mobile */}
       <div
-        className="offcanvas offcanvas-start d-md-none "
+        className="offcanvas offcanvas-start d-md-none"
         style={{ backgroundColor: "#144481" }}
         tabIndex="-1"
         id="sidebarOffcanvas"
         aria-labelledby="sidebarOffcanvasLabel"
       >
-        <div className="offcanvas-header ">
-          {/* <h5 className="offcanvas-title text-white" id="sidebarOffcanvasLabel">
-         
-          </h5> */}
+        <div className="offcanvas-header">
           <button
             type="button"
-            className="btn-close bg-warning "
+            className="btn-close bg-warning"
             data-bs-dismiss="offcanvas"
             aria-label="Close"
           ></button>
@@ -55,7 +52,7 @@ const Sidebar = () => {
 
       {/* Sidebar for Desktop */}
       <div
-        className="d-none d-md-flex flex-column  border-end"
+        className="d-none d-md-flex flex-column border-end"
         style={{ width: "250px", height: "100vh", backgroundColor: "#144481" }}
       >
         <SidebarContent logo={logo} />
@@ -65,20 +62,21 @@ const Sidebar = () => {
 };
 
 const SidebarContent = ({ logo }) => (
-  <div className="d-flex  flex-column h-100">
-    <div className=" text-center">
-      <img src={logo} alt="Logo" className="w-50 mb-3 rounded-circle" />
-      <h5 className="text-white fs-4 fw-bold mb-5">LawForLayman</h5>
-      <nav className="nav flex-column ">
+  <div className="d-flex flex-column h-100">
+    <div className="text-center">
+      <img src={logo} alt="Logo" className="w-25 mb-3 rounded-circle" />
+      <h6 className="text-white  fw-bold mb-5">LawForLayman</h6>
+      <nav className="nav flex-column">
         <NavItem icon={<HouseDoor />} text="Dashboard" />
-        <NavItem icon={<Briefcase />} text="My Cases" />
-        <NavItem icon={<Calendar />} text="Schedule" />
-        <NavItem icon={<People />} text="Clients" />
-        <NavItem icon={<Gear />} text="Profile" />
+        <NavItem icon={<FileText />} text="Complaints" />
+        <NavItem icon={<PersonCircle />} text="Lawyers" />
+        <NavItem icon={<Calendar2Event />} text="Schedule" />
+        <NavItem icon={<BarChart />} text="Reports" />
+        <NavItem icon={<Gear />} text="Settings" />
       </nav>
     </div>
     <div className="mt-auto p-3 border-top">
-      <Link to="/lawyer/login" className="text-decoration-none">
+      <Link to="/admin/login" className="text-decoration-none">
         <button className="btn btn-danger w-100 d-flex align-items-center">
           <BoxArrowRight className="me-2" /> Logout
         </button>
@@ -89,10 +87,10 @@ const SidebarContent = ({ logo }) => (
 
 const NavItem = ({ icon, text }) => (
   <div
-    className="nav-link text-white  d-flex align-items-center mb-1"
+    className="nav-link text-white d-flex align-items-center mb-1"
     style={{ cursor: "pointer" }}
   >
-    <div className="d-flex p-3 text-center  align-items-center w-100 p-2 hover:bg-warning">
+    <div className="d-flex p-3 text-center align-items-center w-100 p-2 hover:bg-warning">
       {icon}
       <span className="ms-2">{text}</span>
     </div>

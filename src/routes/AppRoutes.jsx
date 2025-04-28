@@ -11,6 +11,7 @@ import ForgotPassword from "../lawyerPanel/component/forgotPassword/ForgotPasswo
 import LawyerDashboard from "../lawyerPanel/component/lawyerDashboard/LawyerDashboard";
 import RegisterComplaint from "../clientPanel/component/registerComplaint/RegisterComplaint";
 import TrackComplaint from "../clientPanel/component/trackComplaint/TrackComplaint";
+import AdminDashboard from "../adminPanel/component/adminDashboard/adminDashboard";
 
 
 const AppRoutes = () => {
@@ -24,15 +25,14 @@ const AppRoutes = () => {
 
       <Route path="/admin/login" element={<AdminLogin />} />
 
-      
       <Route path="/lawyer/login" element={<LawyerLogin />} />
       <Route path="/lawyer/register" element={<LawyerRegister />} />
       <Route path="/lawyer/forgot-password" element={<ForgotPassword />} />
       <Route path="/lawyer/dashboard" element={<LawyerDashboard />} />
+      <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
       <Route path="/client/register" element={<RegisterComplaint />} />
       <Route path="/track-complaint" element={<TrackComplaint />} />
-      
     </Routes>
   );
 };

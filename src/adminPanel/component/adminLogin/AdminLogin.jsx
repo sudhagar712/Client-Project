@@ -35,30 +35,32 @@ const AdminLogin = () => {
 
   return (
     <div
-      className="min-vh-100 d-flex flex-column"
+      className="min-vh-100 d-flex flex-column p-2"
       style={{
         backgroundImage: `linear-gradient(rgba(1, 43, 92, 0.9), rgba(1, 43, 92, 0.7)), url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundSize: "fit",
+
+        backgroundRepeat: "repeat"
       }}
     >
+      <Link
+        to="/"
+        className="d-flex  align-items-center text-center text-white fs-5 fw-medium text-decoration-none "
+        style={{ transition: "all 0.3s ease" }}
+      >
+        <i className="bi bi-arrow-left me-2"></i>
+        Back to Home
+      </Link>
       <main className="py-4 w-100">
-        <Container fluid="lg" className="py-4">
-          <Link
-            to="/"
-            className="d-flex align-items-center text-white fs-5 fw-medium text-decoration-none mb-4"
-            style={{ transition: "all 0.3s ease" }}
+        <Container fluid="lg" className="py-3">
+          <Row
+            className="justify-content-center  opacity-75  align-items-center min-vh-100"
+            style={{ backgroundColor: "#0d2b45" }}
           >
-            <i className="bi bi-arrow-left me-2"></i>
-            Back to Home
-          </Link>
-
-          <Row className="justify-content-center align-items-center min-vh-100">
             {/* Left Side Image */}
             <Col
               lg={6}
-              className="d-none d-lg-flex justify-content-center align-items-center"
+              className="d-none d-lg-flex justify-content-center  align-items-center"
             >
               <div className="text-center">
                 <img
@@ -70,7 +72,7 @@ const AdminLogin = () => {
                     maxHeight: "300px",
                     objectFit: "cover",
                     borderRadius: "50%",
-                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
+                    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)"
                   }}
                 />
                 <h2 className="text-white fw-bold mb-3">Welcome Back!</h2>
@@ -95,11 +97,11 @@ const AdminLogin = () => {
                       width: "80px",
                       height: "80px",
                       borderRadius: "50%",
-                      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+                      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)"
                     }}
                   />
-                  <Card.Title className="mb-2 fs-2 fw-bold text-primary">
-                    Admin Login
+                  <Card.Title className="mb-2 fs-2 fw-bold text-black">
+                    Admin <span className="text-warning">Login</span>
                   </Card.Title>
                   <Card.Text className="text-muted">
                     Enter your credentials to continue
@@ -166,7 +168,7 @@ const AdminLogin = () => {
                         background: "linear-gradient(45deg, #012b5c, #1a4b8c)",
                         border: "none",
                         borderRadius: "10px",
-                        fontSize: "1.1rem",
+                        fontSize: "1.1rem"
                       }}
                     >
                       {loading ? (
