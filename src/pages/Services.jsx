@@ -26,10 +26,9 @@ const services = [
 
 const Services = () => {
   const sectionStyle = {
-    backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0.17)), url(${bgImage})`,
+    backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0.39)), url(${bgImage})`,
     backgroundSize: "fit",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
+    backgroundRepeat: "repeat",
     color: "white"
   };
 
@@ -43,7 +42,7 @@ const Services = () => {
           <img
             src={law}
             alt="law"
-            className="rounded-circle mb-3"
+            className="rounded-circle mb-5"
             style={{ width: "200px", height: "200px", objectFit: "fit" }}
           />
         </div>
@@ -59,7 +58,7 @@ const Services = () => {
               key={index}
             >
               <div
-                className="card h-100 shadow-lg border-0 card-hover"
+                className="card h-100 shadow-lg border-0 opacity-75 card-hover"
                 style={{ borderRadius: "1rem", backgroundColor: "#ffffffdd" }}
               >
                 <div className="card-body text-start">

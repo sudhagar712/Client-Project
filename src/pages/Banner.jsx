@@ -11,7 +11,6 @@ const Banner = () => {
     color: "white",
     minHeight: "100vh",
     display: "flex",
-    alignItems: "center",
     backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0.39)), url(${bannerBg})`,
     backgroundSize: "fit",
     
@@ -21,8 +20,8 @@ const Banner = () => {
   };
 
   return (
-    <div style={bannerStyle} className="py-5">
-      <div className="container">
+    <div style={bannerStyle} className="py-5 ">
+      <div className="container mt-3">
         <div className="row align-items-center">
           {/* Left Column */}
           <div className="col-md-6 text-white text-center text-md-start mb-4 mb-md-0">
@@ -71,7 +70,7 @@ const Banner = () => {
             <img
               src={logo}
               alt="LawForLayman Logo"
-              className="img-fluid"
+              className="img-fluid mt-5"
               data-aos="zoom-in-up"
               style={{ maxWidth: "60%", height: "auto", borderRadius: "50%" }}
             />
