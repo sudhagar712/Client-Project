@@ -12,23 +12,26 @@ import OurLatest from '../OurLatest';
 import ReviewsSection from '../ReviewsSection';
 import LawyerDuties from '../LawyerDuties';
 import FAQSection from './FAQComponent';
+import RegisterButton from '../../components/RegisterButton';
 
 const Home = () => {
   return (
     <div>
       <Banner />
+      <RegisterButton />
       <Services />
-      <AllInOnePlatform/>
-      <HowItWorks/>
-      <LawyerDuties/>
+      <AllInOnePlatform />
+      <RegisterButton />
+      <HowItWorks />
+      <LawyerDuties />
       <RealProblems />
-      <Benefits/>
-      <ResultsExpected/>
-      <OurLatest/>
-      <WhyCustomersLoveUs/>
+      <Benefits />
+      <ResultsExpected />
+      <OurLatest />
+      <WhyCustomersLoveUs />
       <ReviewsSection />
-      <FAQSection/>
-      <Contact/>
+      <FAQSection />
+      <Contact />
     </div>
   );
 }

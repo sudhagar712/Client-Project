@@ -13,7 +13,9 @@ body{
   
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 
 .subbtn{
@@ -178,7 +180,11 @@ color:black;
   background-color: #012b5c !important;
   color: white !important;
   border: 1px solid white !important;
-  transition: 2s all ease-in-out;
+  transition: 1s all ease-in;
+}
+
+.card-hover{
+  background-color: #fff3cd !important;
 }
 
 .card-hover:hover .card-title,
@@ -193,7 +199,7 @@ color:black;
 .feature-card {
   transition: all 0.3s ease;
   border: none;
-  border-radius: 1rem;
+  border-radius: 5rem;
 }
 
 .feature-card:hover {

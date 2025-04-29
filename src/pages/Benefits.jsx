@@ -38,9 +38,9 @@ const Benefits = () => {
         backgroundPosition: "center"
       }}
     >
-      <div className="container ">
+      <div className="container-fluid ">
         <hr />
-        <h1 className="display-1 container mt-3 fw-bold mb-5 ">
+        <h1 className="display-1  mt-3 fw-bold mb-5 ">
           What <span className="text-warning">Benefits</span>
         </h1>
         <div className="row g-4 justify-content-center">
@@ -60,8 +60,8 @@ const Benefits = () => {
                 >
                   {benefit.icon}
                 </div>
-                <h5 className="fw-bold mb-2">{benefit.title}</h5>
-                <p className="mt-2">{benefit.description}</p>
+                <h5 className="fw-bold mb-3 mt-3 text-center">{benefit.title}</h5>
+                <p className="mt-2 text-center">{benefit.description}</p>
               </div>
             </div>
           ))}

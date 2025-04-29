@@ -4,7 +4,11 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <section className=" py-5" style={{ backgroundColor: "#fff3cd" }}>
+    <section
+      id="contact"
+      className=" py-5"
+      style={{ backgroundColor: "#fff3cd" }}
+    >
       <div className="container">
         <h1 className="display-1 container fw-bold mb-5 ">
           Contact<span className="text-warning">Us</span>
