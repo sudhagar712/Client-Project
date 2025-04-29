@@ -13,11 +13,13 @@ import ReviewsSection from '../ReviewsSection';
 import LawyerDuties from '../LawyerDuties';
 import FAQSection from './FAQComponent';
 import RegisterButton from '../../components/RegisterButton';
+import BackToTop from '../../components/BackToTop';
 
 const Home = () => {
   return (
     <div>
       <Banner />
+      <BackToTop/>
       <RegisterButton />
       <Services />
       <AllInOnePlatform />

@@ -38,7 +38,7 @@ const Benefits = () => {
         backgroundPosition: "center"
       }}
     >
-      <div className="container-fluid ">
+      <div className="container ">
         <hr />
         <h1 className="display-1  mt-3 fw-bold mb-5 ">
           What <span className="text-warning">Benefits</span>

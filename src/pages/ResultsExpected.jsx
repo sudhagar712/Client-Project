@@ -12,7 +12,7 @@ const ResultsExpected = () => {
       </h1>
 
       {/* First Bar */}
-      <div className="mb-4">
+      <div className="mb-4 container">
         <div className="d-flex w-100" style={{ height: "80px" }}>
           <div
             className="d-flex align-items-center justify-content-center text-white fw-bold text-center px-4"
