@@ -26,9 +26,9 @@ const services = [
 
 const Services = () => {
   const sectionStyle = {
-    backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0.39)), url(${bgImage})`,
+    backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0)), url(${bgImage})`,
     backgroundSize: "fit",
-    backgroundRepeat: "repeat",
+    backgroundRepeat: "no-repeat",
     color: "white"
   };
 

@@ -4,12 +4,12 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <section className="contact-section py-5">
+    <section className=" py-5" style={{ backgroundColor: "#fff3cd" }}>
       <div className="container">
-        <h1 className="mb-5 fw-bold text-white fs-1">
-          Contact<span className="text-warning fs-1"> Us</span>
+        <h1 className="display-1 container fw-bold mb-5 ">
+          Contact<span className="text-warning">Us</span>
         </h1>
-        <p className=" text-light mb-5">
+        <p className=" mb-5">
           Have questions or need assistance? Reach out and we'll respond
           promptly.
         </p>
@@ -17,11 +17,18 @@ const Contact = () => {
         <div className="row g-4">
           {/* Contact Form */}
           <div className="col-lg-8 animate__animated animate__fadeInUp">
-            <div className="cardcontact bg-primary opacity-75 d-flex justify-content-center ">
+            <div className=" shadow-lg  d-flex justify-content-center ">
               <h4 className="fw-bold ">Join LawForLayman Today!</h4>
             </div>
 
-            <div className="card p-4 mb-4 mt-4 shadow  bg-primary bg-opacity-75">
+            <div
+              className="card p-4 mb-4 mt-4  shadow-lg "
+              style={{
+                background: "#083160",
+                backdropFilter: "blur(10px)",
+                borderRadius: "1rem"
+              }}
+            >
               <h5 className="fw-bold mb-3 text-white fs-1">
                 Contact <span className="text-warning">Information</span>
               </h5>
@@ -67,7 +74,7 @@ const Contact = () => {
             <div
               className="card  p-5 shadow-lg border-0"
               style={{
-                background: "rgba(13, 110, 253, 0.75)",
+                background: "#083160",
                 backdropFilter: "blur(10px)",
                 borderRadius: "1rem"
               }}

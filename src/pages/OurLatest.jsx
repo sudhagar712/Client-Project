@@ -21,8 +21,9 @@ const articles = [
 
 const OurLatest = () => {
   return (
-    <section className="py-5 bg-white">
+    <section className="py-5" style={{ backgroundColor: "#fff3cd" }}>
       <div className="container">
+        <hr />
         <h1 className="display-1 container fw-bold mb-5 ">
           Our Latest <span className="text-warning">Articles</span>
         </h1>
@@ -32,16 +33,18 @@ const OurLatest = () => {
               className="col-12 col-md-6 mb-4 d-flex flex-column"
               key={index}
             >
-              <img
-                src={article.image}
-                alt={article.title}
-                className="img-fluid rounded w-50"
-              />
-              <h5 className="fw-bold mt-3">{article.title}</h5>
-              <p className="text-muted">{article.description}</p>
-              <a href={article.link} className="fw-semibold text-primary">
-                Read More
-              </a>
+              <div className="bg-white p-5">
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  className="img-fluid rounded w-100"
+                />
+                <h5 className="fw-bold mt-3">{article.title}</h5>
+                <p className="text-muted">{article.description}</p>
+                <a href={article.link} className="fw-semibold text-decoration-none ">
+                  Read More
+                </a>
+              </div>
             </div>
           ))}
         </div>

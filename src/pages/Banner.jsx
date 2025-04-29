@@ -11,7 +11,7 @@ const Banner = () => {
     color: "white",
     minHeight: "100vh",
     display: "flex",
-    backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0.39)), url(${bannerBg})`,
+    backgroundImage: `linear-gradient(#012b5c,hsla(213, 93.10%, 17.10%, 0.64)), url(${bannerBg})`,
     backgroundSize: "fit",
     
   
@@ -21,10 +21,10 @@ const Banner = () => {
 
   return (
     <div style={bannerStyle} className="py-5 ">
-      <div className="container mt-3">
+      <div className="container-fluid p-5 ">
         <div className="row align-items-center">
           {/* Left Column */}
-          <div className="col-md-6 text-white text-center text-md-start mb-4 mb-md-0">
+          <div className="col-md-7 text-white text-center text-md-start mb-4 mb-md-0">
             <h1 className="fw-bold" style={{ fontSize: "2.8rem" }}>
               <Typewriter
                 words={[ "Legal Assistance Made Simple",
@@ -66,13 +66,13 @@ const Banner = () => {
           </div>
 
           {/* Right Column */}
-          <div className="col-md-6 text-center">
+          <div className="col-md-5 text-center">
             <img
               src={logo}
               alt="LawForLayman Logo"
               className="img-fluid mt-5"
               data-aos="zoom-in-up"
-              style={{ maxWidth: "60%", height: "auto", borderRadius: "50%" }}
+              style={{ maxWidth: "70%", height: "auto", borderRadius: "50%" }}
             />
           </div>
         </div>

@@ -2,7 +2,11 @@ import React from "react";
 
 const ResultsExpected = () => {
   return (
-    <div className="container py-5">
+    <div
+      className="container-fluid py-5"
+      style={{ backgroundColor: "#fff3cd" }}
+    >
+      <hr />
       <h1 className="display-1 container fw-bold mb-5 ">
         Results <span className="text-warning">Excepted</span>
       </h1>

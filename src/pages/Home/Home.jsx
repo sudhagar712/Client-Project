@@ -9,6 +9,9 @@ import Benefits from '../Benefits';
 import HowItWorks from '../HowitsWorks';
 import ResultsExpected from '../ResultsExpected';
 import OurLatest from '../OurLatest';
+import ReviewsSection from '../ReviewsSection';
+import LawyerDuties from '../LawyerDuties';
+import FAQSection from './FAQComponent';
 
 const Home = () => {
   return (
@@ -17,11 +20,14 @@ const Home = () => {
       <Services />
       <AllInOnePlatform/>
       <HowItWorks/>
+      <LawyerDuties/>
       <RealProblems />
       <Benefits/>
       <ResultsExpected/>
       <OurLatest/>
       <WhyCustomersLoveUs/>
+      <ReviewsSection />
+      <FAQSection/>
       <Contact/>
     </div>
   );

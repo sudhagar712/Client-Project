@@ -1,5 +1,5 @@
 import React from "react";
-import { Cpu, FileText, Cloud, Mic } from "lucide-react"; // You can replace with any icon library
+import { Cpu, FileText, Cloud, Mic } from "lucide-react"; 
 
 const benefits = [
   {
@@ -32,14 +32,15 @@ const Benefits = () => {
     <section
       className="py-5"
       style={{
-        background: "#fdfdfd",
+        background: "#fff3cd",
         backgroundImage: "url('/path-to-background.png')",
         backgroundSize: "cover",
         backgroundPosition: "center"
       }}
     >
       <div className="container ">
-        <h1 className="display-1 container fw-bold mb-5 ">
+        <hr />
+        <h1 className="display-1 container mt-3 fw-bold mb-5 ">
           What <span className="text-warning">Benefits</span>
         </h1>
         <div className="row g-4 justify-content-center">
