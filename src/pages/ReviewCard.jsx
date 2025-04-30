@@ -2,7 +2,7 @@ import React from "react";
 
 const ReviewCard = ({ name, image, rating, review }) => {
   return (
-    <div className="card shadow-sm p-3 border-0 h-100">
+    <div className="card shadow-lg p-3 border-0 h-100 p-4" >
       <div className="d-flex align-items-center mb-2">
         <img
           src={image}

@@ -4,6 +4,7 @@
    background-color: #012b5c;
     z-index: 1050;
   
+  
 }
 
 .navbar-brand span {
@@ -66,3 +67,45 @@
 }
 
 
+/* Offcanvas body spacing */
+.offcanvas-body {
+  padding: 1.5rem;
+}
+
+/* Space between each nav item */
+.offcanvas-body .navbar-nav .nav-item {
+  margin-bottom: 1rem;
+}
+
+/* Dropdown toggle spacing and style */
+.offcanvas-body .dropdown-toggle {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: block;
+}
+
+/* Links inside dropdown menu */
+.offcanvas-body .dropdown-menu .dropdown-item {
+  padding: 0.5rem 1.25rem;
+}
+
+/* Adjust individual links like Tracking Complaint, Lawyer Login */
+.offcanvas-body .navbar-nav > li > a.text-warning {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Style the icons to have space */
+.offcanvas-body .nav-link i {
+  font-size: 1.5rem;
+  margin-top: 4px;
+}
+
+
+
+.offcanvas-header {
+  border-bottom: 1px solid #ffffff33;
+  padding-bottom: 0.75rem;
+}

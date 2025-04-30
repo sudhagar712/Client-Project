@@ -26,11 +26,13 @@ const Banner = () => {
           <div className="col-md-5 text-white text-center text-md-start mb-4 mb-md-0">
             <h1 className="fw-bold" style={{ fontSize: "2.8rem" }}>
               <Typewriter
-                words={[ "Legal Assistance Made Simple",
+                words={[
+                  "Legal Assistance Made Simple",
                   "Expert Legal Guidance",
                   "Connect with Lawyers",
                   "Resolve Legal Issues",
-                  "Professional Legal Support",]}
+                  "Professional Legal Support"
+                ]}
                 loop={false}
                 cursor
                 cursorStyle="|"
@@ -50,14 +52,16 @@ const Banner = () => {
                 style={{
                   backgroundColor: "#ffc107",
                   color: "#000",
-                  padding: "0.5rem 1.5rem",
+                  border: "2px solid white"
                 }}
               >
                 Find a Lawyer
               </Link>
               <button
-                className="btn btn-light fw-bold"
-                style={{ padding: "0.5rem 1.5rem" }}
+                className="btn bg-white text-black fw-bold shadow-lg"
+                style={{
+                  border: "3px solid #ffc107"
+                }}
               >
                 Learn More
               </button>

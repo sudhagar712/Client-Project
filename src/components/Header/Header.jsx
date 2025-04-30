@@ -19,8 +19,8 @@ const Header = () => {
             }
             onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
           />
-          <span className="text-warning fw-bolder fs-3  py-1">LAWFOR</span>
-          <span className="fw-bold text-white fs-3">LAYMAN</span>
+          <span className="text-warning fw-bolder  py-1">LAWFOR</span>
+          <span className="fw-bold text-white ">LAYMAN</span>
         </Link>
 
         {/* Toggle button for Offcanvas */}
@@ -36,16 +36,16 @@ const Header = () => {
 
         {/* Offcanvas Menu */}
         <div
-          className="offcanvas offcanvas-start"
+          className="offcanvas offcanvas-start "
           style={{ backgroundColor: "#012b5c" }}
           tabIndex="-1"
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
         >
           <div className="offcanvas-header">
-            {/* <h5 className="offcanvas-title text-white" id="offcanvasNavbarLabel">
+            <h5 className="offcanvas-title text-white" id="offcanvasNavbarLabel">
               Menu
-            </h5> */}
+            </h5>
             <button
               type="button"
               className="btn-close bg-white"
@@ -54,7 +54,7 @@ const Header = () => {
             ></button>
           </div>
           <div className="offcanvas-body ">
-            <ul className="navbar-nav justify-content-end  flex-grow-1 pe-3 gap-lg-3">
+            <ul className="navbar-nav justify-content-end align-items-center    flex-grow-1 pe-3 gap-lg-4 ">
               {/* Dynamic Dropdowns */}
               {[
                 {
@@ -67,11 +67,9 @@ const Header = () => {
                   ]
                 },
                 { label: "Business Setup", options: ["Startup", "Company"] },
-                { label: "Tax & Compliance", options: ["GST", "Income Tax"] },
-                { label: "Trademark & IP", options: ["Trademark"] },
-                { label: "Documentation", options: ["Agreements"] }
+                { label: "Tax & Compliance", options: ["GST", "Income Tax"] }
               ].map((item, idx) => (
-                <li className="nav-item dropdown" key={idx}>
+                <li className="nav-item dropdown mt-3" key={idx}>
                   <a
                     className="nav-link dropdown-toggle text-warning"
                     href="#"
@@ -95,8 +93,19 @@ const Header = () => {
                 </li>
               ))}
 
+              <li>
+                <Link to="/track-complaint" className="text-decoration-none text-warning">
+                  Tracking Complaint
+                </Link>
+              </li>
+              <li>
+                <Link to="/lawyer/login" className="text-decoration-none text-warning">
+                  Lawyer Login
+                </Link>
+              </li>
+
               {/* Profile Icon Dropdown */}
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown mt-3">
                 <a
                   className="nav-link d-flex align-items-center"
                   href="#"
@@ -114,24 +123,6 @@ const Header = () => {
                   <li>
                     <Link
                       className="dropdown-item"
-                      to="/track-complaint"
-                      data-bs-dismiss="offcanvas"
-                    >
-                      Tracking Complaint
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="dropdown-item"
-                      to="/lawyer/login"
-                      data-bs-dismiss="offcanvas"
-                    >
-                      Lawyer Login
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="dropdown-item"
                       to="/admin/login"
                       data-bs-dismiss="offcanvas"
                     >
@@ -142,7 +133,7 @@ const Header = () => {
               </li>
 
               {/* Extra Menu Icon Dropdown */}
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown mt-3">
                 <a
                   className="nav-link d-flex align-items-center"
                   href="#"

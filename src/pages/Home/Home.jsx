@@ -19,9 +19,10 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <BackToTop/>
+      <BackToTop />
       <RegisterButton />
       <Services />
+      <RegisterButton />
       <AllInOnePlatform />
       <RegisterButton />
       <HowItWorks />
