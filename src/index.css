@@ -234,8 +234,24 @@ textarea:focus {
 }
 
 
-.nav-link:hover {
+/* .nav-link:hover {
   background-color: #ffc107a3; 
   color:#012b5c;
   border-radius:10px;
+} */
+
+
+.attractive-toggler {
+  background-color: #ffc107; /* Bootstrap warning color */
+  border: 1px solid white;
+
+  padding: 8px 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.attractive-toggler:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 10px rgba(232, 203, 203, 0.533);
 }

@@ -2,7 +2,16 @@
 .headercontainer {
   
    background-color: #012b5c;
+    z-index: 1050;
   
+}
+
+.navbar-brand span {
+  font-size: 1.1rem;
+}
+
+.navbar-toggler {
+  border: none;
 }
 
 .logo-img {

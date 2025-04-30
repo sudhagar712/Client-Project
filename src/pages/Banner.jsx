@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import { Typewriter } from "react-simple-typewriter";
-import bannerBg from "../assets/images/pattern logo.jpg";
+import bannerBg from "../assets/images/aigif.gif";
 
 const Banner = () => {
   const bannerStyle = {
@@ -11,12 +11,11 @@ const Banner = () => {
     color: "white",
     minHeight: "100vh",
     display: "flex",
-    backgroundImage: `linear-gradient(#012b5c,hsla(242, 89.20%, 32.70%, 0.07)), url(${bannerBg})`,
-    backgroundSize: "fit",
-    
-  
-    backgroundRepeat: "repeat",
-    zIndex: 1,
+    backgroundImage: `linear-gradient( #012b5c,rgba(1, 43, 92, 0.33)), url(${bannerBg})`,
+    backgroundSize: "cover",
+
+    backgroundRepeat: "no-repeat",
+    zIndex: 1
   };
 
   return (
@@ -70,7 +69,7 @@ const Banner = () => {
             <img
               src={logo}
               alt="LawForLayman Logo"
-              className="img-fluid mt-5"
+              className="img-fluid mt-5 opacity-25"
               data-aos="zoom-in-up"
               style={{ maxWidth: "65%", height: "auto", borderRadius: "50%" }}
             />

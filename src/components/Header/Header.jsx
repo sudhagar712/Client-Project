@@ -8,90 +8,64 @@ const Header = () => {
     <nav className="navbar navbar-expand-lg px-2 headercontainer">
       <div className="container-fluid">
         {/* Brand Logo */}
-        <Link to="/" className="navbar-brand d-flex align-items-center">
+        <Link to="/" className="navbar-brand px-3 d-flex align-items-center">
           <img
             src={logo}
             alt="Lawfor Layman"
             className="logo-img animated-logo me-2"
-            style={{ height: "40px", transition: "transform 0.3s ease-in-out" }}
+            style={{ height: "50px", transition: "transform 0.3s ease-in-out" }}
             onMouseEnter={(e) =>
               (e.currentTarget.style.transform = "scale(1.1)")
             }
             onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
           />
-          <span className="text-warning fw-bolder px-2 py-1">LAWFOR </span>
-          <span className="fw-bold text-white">LAYMAN</span>
+          <span className="text-warning fw-bolder fs-3  py-1">LAWFOR</span>
+          <span className="fw-bold text-white fs-3">LAYMAN</span>
         </Link>
 
         {/* Toggle button for Offcanvas */}
         <button
-          className="navbar-toggler bg-white"
+          className="navbar-toggler attractive-toggler"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar"
           aria-controls="offcanvasNavbar"
         >
-          <span className="navbar-toggler-icon"></span>
+          <i className="bi bi-list fs-3 text-white"></i>
         </button>
 
         {/* Offcanvas Menu */}
         <div
-          className="offcanvas offcanvas-end"
+          className="offcanvas offcanvas-start"
           style={{ backgroundColor: "#012b5c" }}
           tabIndex="-1"
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
         >
           <div className="offcanvas-header">
-            <h5
-              className="offcanvas-title text-white"
-              id="offcanvasNavbarLabel"
-            >
+            {/* <h5 className="offcanvas-title text-white" id="offcanvasNavbarLabel">
               Menu
-            </h5>
+            </h5> */}
             <button
               type="button"
-              className="btn-close"
+              className="btn-close bg-white"
               data-bs-dismiss="offcanvas"
               aria-label="Close"
             ></button>
           </div>
-          <div className="offcanvas-body">
-            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3 gap-lg-3">
-              {/* Consult an Expert Dropdown */}
-              <li className="nav-item dropdown">
-                <button
-                  className="btn btn-warning fw-bold dropdown-toggle w-100"
-                  data-bs-toggle="dropdown"
-                >
-                  Consult an Expert
-                </button>
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link to="#" className="dropdown-item">
-                      Talk to Lawyer
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="dropdown-item">
-                      Talk to a Chartered Accountant
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="dropdown-item">
-                      Talk to a Company Secretary
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="#" className="dropdown-item">
-                      Talk to a IP/Trademark Lawyer
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-
+          <div className="offcanvas-body ">
+            <ul className="navbar-nav justify-content-end  flex-grow-1 pe-3 gap-lg-3">
               {/* Dynamic Dropdowns */}
               {[
+                {
+                  label: "Consult an Expert",
+                  options: [
+                    " Talk to Lawyer",
+                    "Talk to a Chartered Accountant",
+                    " Talk to a Company Secretary",
+                    " Talk to a IP/Trademark Lawyer"
+                  ]
+                },
                 { label: "Business Setup", options: ["Startup", "Company"] },
                 { label: "Tax & Compliance", options: ["GST", "Income Tax"] },
                 { label: "Trademark & IP", options: ["Trademark"] },
@@ -99,7 +73,7 @@ const Header = () => {
               ].map((item, idx) => (
                 <li className="nav-item dropdown" key={idx}>
                   <a
-                    className="nav-link dropdown-toggle text-white"
+                    className="nav-link dropdown-toggle text-warning"
                     href="#"
                     data-bs-toggle="dropdown"
                   >
@@ -108,7 +82,11 @@ const Header = () => {
                   <ul className="dropdown-menu">
                     {item.options.map((opt, i) => (
                       <li key={i}>
-                        <a className="dropdown-item" href="#">
+                        <a
+                          className="dropdown-item"
+                          href="#"
+                          data-bs-dismiss="offcanvas"
+                        >
                           {opt}
                         </a>
                       </li>
@@ -120,7 +98,7 @@ const Header = () => {
               {/* Profile Icon Dropdown */}
               <li className="nav-item dropdown">
                 <a
-                  className="nav-link  d-flex align-items-center"
+                  className="nav-link d-flex align-items-center"
                   href="#"
                   id="profileDropdown"
                   role="button"
@@ -134,20 +112,28 @@ const Header = () => {
                   aria-labelledby="profileDropdown"
                 >
                   <li>
-                    <Link className="dropdown-item" to="/track-complaint">
+                    <Link
+                      className="dropdown-item"
+                      to="/track-complaint"
+                      data-bs-dismiss="offcanvas"
+                    >
                       Tracking Complaint
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/lawyer/login">
+                    <Link
+                      className="dropdown-item"
+                      to="/lawyer/login"
+                      data-bs-dismiss="offcanvas"
+                    >
                       Lawyer Login
                     </Link>
                   </li>
-
                   <li>
                     <Link
-                      className="dropdown-item "
+                      className="dropdown-item"
                       to="/admin/login"
+                      data-bs-dismiss="offcanvas"
                     >
                       Admin Login
                     </Link>
@@ -158,31 +144,43 @@ const Header = () => {
               {/* Extra Menu Icon Dropdown */}
               <li className="nav-item dropdown">
                 <a
-                  className="nav-link  d-flex  align-items-center"
+                  className="nav-link d-flex align-items-center"
                   href="#"
                   id="menuDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <i className="bi bi-list text-white "></i>
+                  <i className="bi bi-list text-white"></i>
                 </a>
                 <ul
                   className="dropdown-menu dropdown-menu-end"
                   aria-labelledby="menuDropdown"
                 >
                   <li>
-                    <Link className="dropdown-item" to="/service">
+                    <Link
+                      className="dropdown-item"
+                      to="/service"
+                      data-bs-dismiss="offcanvas"
+                    >
                       Services
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/about">
+                    <Link
+                      className="dropdown-item"
+                      to="/about"
+                      data-bs-dismiss="offcanvas"
+                    >
                       How it works
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/contact">
+                    <Link
+                      className="dropdown-item"
+                      to="/contact"
+                      data-bs-dismiss="offcanvas"
+                    >
                       Contact Us
                     </Link>
                   </li>

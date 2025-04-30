@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import bgImage from "../assets/images/service.png"; 
+import bgImage from "../assets/images/newbanner.jpg"; 
 import law from "../assets/images/law-profession.jpg"
 
 const services = [
@@ -26,9 +26,9 @@ const services = [
 
 const Services = () => {
   const sectionStyle = {
-    backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0)), url(${bgImage})`,
-    backgroundSize: "fit",
-    backgroundRepeat: "no-repeat",
+    backgroundImage: `linear-gradient(#012b5c,rgba(1, 43, 92, 0.39)), url(${bgImage})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "repeat",
     color: "white"
   };
 
